@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T07:29:02.618Z",
+  "updated": "2026-07-02T08:52:55.707Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -16,49 +16,49 @@
           "date": "2026-03-15",
           "name": "Chinese GP",
           "venue": "Shanghai Int'l Circuit (Sprint)",
-          "winner": "Kimi Antonelli"
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 3,
           "date": "2026-03-29",
           "name": "Japanese GP",
           "venue": "Suzuka Circuit",
-          "winner": "Kimi Antonelli"
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 4,
           "date": "2026-05-03",
           "name": "Miami GP",
           "venue": "Miami Int'l Autodrome (Sprint)",
-          "winner": "Kimi Antonelli"
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 5,
           "date": "2026-05-24",
           "name": "Canadian GP",
           "venue": "Circuit Gilles Villeneuve, Montreal (Sprint)",
-          "winner": "Kimi Antonelli"
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 6,
           "date": "2026-06-07",
           "name": "Monaco GP",
           "venue": "Circuit de Monaco",
-          "winner": "Kimi Antonelli"
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 7,
           "date": "2026-06-14",
           "name": "Barcelona-Catalunya GP",
           "venue": "Circuit de Barcelona-Catalunya",
-          "winner": ""
+          "winner": "Lewis Hamilton"
         },
         {
           "r": 8,
           "date": "2026-06-28",
           "name": "Austrian GP",
           "venue": "Red Bull Ring, Spielberg",
-          "winner": ""
+          "winner": "George Russell"
         },
         {
           "r": 9,
@@ -139,7 +139,7 @@
         },
         {
           "r": 20,
-          "date": "2026-11-21",
+          "date": "2026-11-22",
           "name": "Las Vegas GP",
           "venue": "Las Vegas Strip Circuit",
           "winner": ""
@@ -167,70 +167,70 @@
           "date": "2026-03-01",
           "name": "Thailand GP",
           "venue": "Chang Int'l Circuit, Buriram",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 2,
           "date": "2026-03-22",
           "name": "Brazil GP",
           "venue": "Autódromo Ayrton Senna, Goiânia",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 3,
           "date": "2026-03-29",
           "name": "Americas GP",
           "venue": "Circuit of the Americas, Austin",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 4,
           "date": "2026-04-12",
           "name": "Qatar GP",
           "venue": "Lusail Int'l Circuit (night)",
-          "winner": ""
+          "winner": "Álex Márquez"
         },
         {
           "r": 5,
           "date": "2026-04-26",
           "name": "Spanish GP",
           "venue": "Circuito de Jerez–Ángel Nieto",
-          "winner": ""
+          "winner": "Jorge Martín"
         },
         {
           "r": 6,
           "date": "2026-05-10",
           "name": "French GP",
           "venue": "Bugatti Circuit, Le Mans",
-          "winner": ""
+          "winner": "Fabio Di Giannantonio"
         },
         {
           "r": 7,
           "date": "2026-05-17",
           "name": "Catalan GP",
           "venue": "Circuit de Barcelona-Catalunya",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 8,
           "date": "2026-05-31",
           "name": "Italian GP",
           "venue": "Mugello Circuit",
-          "winner": ""
+          "winner": "Marc Márquez"
         },
         {
           "r": 9,
           "date": "2026-06-07",
           "name": "Hungarian GP",
           "venue": "Balaton Park Circuit",
-          "winner": ""
+          "winner": "Marc Márquez"
         },
         {
           "r": 10,
           "date": "2026-06-21",
           "name": "Czech GP",
           "venue": "Brno Circuit",
-          "winner": ""
+          "winner": "Ai Ogura"
         },
         {
           "r": 11,
@@ -325,119 +325,119 @@
           "date": "2026-01-10",
           "name": "Anaheim 1",
           "venue": "Angel Stadium, Anaheim, CA",
-          "winner": ""
+          "winner": "Eli Tomac"
         },
         {
           "r": 2,
           "date": "2026-01-17",
           "name": "San Diego",
           "venue": "Snapdragon Stadium, San Diego, CA",
-          "winner": ""
+          "winner": "Eli Tomac"
         },
         {
           "r": 3,
           "date": "2026-01-24",
           "name": "Anaheim 2",
           "venue": "Angel Stadium, Anaheim, CA",
-          "winner": ""
+          "winner": "Chase Sexton"
         },
         {
           "r": 4,
           "date": "2026-01-31",
           "name": "Houston",
           "venue": "NRG Stadium, Houston, TX · Triple Crown",
-          "winner": ""
+          "winner": "Cooper Webb"
         },
         {
           "r": 5,
           "date": "2026-02-07",
           "name": "Glendale",
           "venue": "State Farm Stadium, Glendale, AZ",
-          "winner": ""
+          "winner": "Ken Roczen"
         },
         {
           "r": 6,
           "date": "2026-02-14",
           "name": "Seattle",
           "venue": "Lumen Field, Seattle, WA",
-          "winner": ""
+          "winner": "Eli Tomac"
         },
         {
           "r": 7,
           "date": "2026-02-21",
           "name": "Arlington",
           "venue": "AT&T Stadium, Arlington, TX",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 8,
           "date": "2026-02-28",
           "name": "Daytona",
           "venue": "Daytona Int'l Speedway, FL",
-          "winner": ""
+          "winner": "Eli Tomac"
         },
         {
           "r": 9,
           "date": "2026-03-07",
           "name": "Indianapolis",
           "venue": "Lucas Oil Stadium, IN · Triple Crown",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 10,
           "date": "2026-03-21",
           "name": "Birmingham",
           "venue": "Protective Stadium, AL · Showdown",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 11,
           "date": "2026-03-28",
           "name": "Detroit",
           "venue": "Ford Field, Detroit, MI",
-          "winner": ""
+          "winner": "Ken Roczen"
         },
         {
           "r": 12,
           "date": "2026-04-04",
           "name": "St. Louis",
           "venue": "The Dome at America's Center, MO · Showdown",
-          "winner": ""
+          "winner": "Ken Roczen"
         },
         {
           "r": 13,
           "date": "2026-04-11",
           "name": "Nashville",
           "venue": "Nissan Stadium, Nashville, TN",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 14,
           "date": "2026-04-18",
           "name": "Cleveland",
           "venue": "Huntington Bank Field, OH",
-          "winner": ""
+          "winner": "Ken Roczen"
         },
         {
           "r": 15,
           "date": "2026-04-25",
           "name": "Philadelphia",
           "venue": "Lincoln Financial Field, PA",
-          "winner": ""
+          "winner": "Ken Roczen"
         },
         {
           "r": 16,
           "date": "2026-05-02",
           "name": "Denver",
           "venue": "Empower Field at Mile High, CO",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 17,
           "date": "2026-05-09",
           "name": "Salt Lake City",
           "venue": "Rice-Eccles Stadium, UT · Final · Showdown",
-          "winner": ""
+          "winner": "Chase Sexton"
         }
       ]
     },
@@ -598,147 +598,147 @@
           "date": "2026-07-04",
           "name": "Barcelona (Team Time Trial)",
           "venue": "Team time trial · 19.7 km",
-          "winner": ""
+          "winner": "Team time trial"
         },
         {
           "r": 2,
           "date": "2026-07-05",
           "name": "Tarragona → Barcelona",
           "venue": "Hilly · 178 km",
-          "winner": ""
+          "winner": "Hilly stage"
         },
         {
           "r": 3,
           "date": "2026-07-06",
           "name": "Granollers → Les Angles",
           "venue": "Mountain · 196 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 4,
           "date": "2026-07-07",
           "name": "Carcassonne → Foix",
           "venue": "Hilly · 182 km",
-          "winner": ""
+          "winner": "Hilly stage"
         },
         {
           "r": 5,
           "date": "2026-07-08",
           "name": "Lannemezan → Pau",
           "venue": "Flat · 158 km",
-          "winner": ""
+          "winner": "Flat stage"
         },
         {
           "r": 6,
           "date": "2026-07-09",
           "name": "Pau → Gavarnie-Gèdre",
           "venue": "Mountain summit finish · 186 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 7,
           "date": "2026-07-10",
           "name": "Hagetmau → Bordeaux",
           "venue": "Flat · 175 km",
-          "winner": ""
+          "winner": "Flat stage"
         },
         {
           "r": 8,
           "date": "2026-07-11",
           "name": "Périgueux → Bergerac",
           "venue": "Flat · 182 km",
-          "winner": ""
+          "winner": "Flat stage"
         },
         {
           "r": 9,
           "date": "2026-07-12",
           "name": "Malemort → Ussel",
           "venue": "Hilly · 185 km",
-          "winner": ""
+          "winner": "Hilly stage"
         },
         {
           "r": 10,
           "date": "2026-07-14",
           "name": "Aurillac → Le Lioran",
           "venue": "Mountain · 167 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 11,
           "date": "2026-07-15",
           "name": "Vichy → Nevers",
           "venue": "Flat · 161 km",
-          "winner": ""
+          "winner": "Flat stage"
         },
         {
           "r": 12,
           "date": "2026-07-16",
           "name": "Magny-Cours → Chalon-sur-Saône",
           "venue": "Flat · 181 km",
-          "winner": ""
+          "winner": "Flat stage"
         },
         {
           "r": 13,
           "date": "2026-07-17",
           "name": "Dole → Belfort",
           "venue": "Hilly · 205 km",
-          "winner": ""
+          "winner": "Hilly stage"
         },
         {
           "r": 14,
           "date": "2026-07-18",
           "name": "Mulhouse → Le Markstein Fellering",
           "venue": "Mountain · 155 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 15,
           "date": "2026-07-19",
           "name": "Champagnole → Plateau de Solaison",
           "venue": "Mountain summit finish · 184 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 16,
           "date": "2026-07-21",
           "name": "Évian-les-Bains → Thonon-les-Bains",
           "venue": "Individual time trial · 26 km",
-          "winner": ""
+          "winner": "Individual time trial"
         },
         {
           "r": 17,
           "date": "2026-07-22",
           "name": "Chambéry → Voiron",
           "venue": "Flat · 175 km",
-          "winner": ""
+          "winner": "Flat stage"
         },
         {
           "r": 18,
           "date": "2026-07-23",
           "name": "Voiron → Orcières-Merlette",
           "venue": "Mountain summit finish · 185 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 19,
           "date": "2026-07-24",
           "name": "Gap → Alpe d'Huez",
           "venue": "Mountain summit finish · 128 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 20,
           "date": "2026-07-25",
           "name": "Le Bourg-d'Oisans → Alpe d'Huez",
           "venue": "Mountain summit finish · 171 km",
-          "winner": ""
+          "winner": "Mountain stage"
         },
         {
           "r": 21,
           "date": "2026-07-26",
           "name": "Thoiry → Paris (Champs-Élysées)",
           "venue": "Flat · 130 km",
-          "winner": ""
+          "winner": "Flat stage"
         }
       ]
     }
