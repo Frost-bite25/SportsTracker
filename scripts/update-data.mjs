@@ -107,19 +107,26 @@ async function updateFromWikipedia(key, title){
   console.log(`${key}: ${Object.keys(map).length} winner(s) found on Wikipedia, ${n} updated`);
 }
 
+// Safety net: never let a stray rejection kill the whole run.
+process.on("unhandledRejection", e => console.error("unhandledRejection (ignored):", e && e.message || e));
+
 // ---- Run each source independently; one failure never aborts the rest ------
+// NOTE: each job is a function (thunk) so its promise is created *and* awaited
+// inside the try/catch — this prevents Node from treating an early rejection
+// (e.g. a Wikipedia page that 404s) as a fatal unhandled rejection.
 const jobs = [
-  ["f1",  updateF1()],
-  ["motogp", updateFromWikipedia("motogp", "2026 MotoGP World Championship")],
-  ["sx",  updateFromWikipedia("sx",  "2026 AMA Supercross Championship")],
-  ["mx",  updateFromWikipedia("mx",  "2026 AMA Pro Motocross Championship")],
-  ["he",  updateFromWikipedia("he",  "2026 FIM Hard Enduro World Championship")],
-  ["tdf", updateFromWikipedia("tdf", "2026 Tour de France")],
+  ["f1",     () => updateF1()],
+  ["motogp", () => updateFromWikipedia("motogp", "2026 MotoGP World Championship")],
+  ["sx",     () => updateFromWikipedia("sx",     "2026 AMA Supercross Championship")],
+  ["mx",     () => updateFromWikipedia("mx",     "2026 AMA Pro Motocross Championship")],
+  ["he",     () => updateFromWikipedia("he",     "2026 FIM Hard Enduro World Championship")],
+  ["tdf",    () => updateFromWikipedia("tdf",    "2026 Tour de France")],
 ];
-for(const [name, p] of jobs){
-  try { await p; } catch(e){ console.error(`${name} failed (kept as-is):`, e.message); }
+for(const [name, run] of jobs){
+  try { await run(); } catch(e){ console.error(`${name} failed (kept as-is):`, e.message); }
 }
 
 data.updated = new Date().toISOString();
 writeFileSync(PATH, JSON.stringify(data, null, 2) + "\n");
 console.log("data.json written at", data.updated);
+process.exit(0);   // clean success even if some sources were skipped
