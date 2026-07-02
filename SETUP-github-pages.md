@@ -1,60 +1,52 @@
-# Race Tracker — hosting on GitHub Pages with auto-refresh
+# Race Tracker — hosting on GitHub Pages (fully automatic)
 
-This site is **static** (just `race-tracker.html` + `data.json`), but it refreshes
-itself two ways so the hosted page stays current:
+`index.html` + `data.json` is a static site. Once it's on GitHub, it refreshes
+itself with **no manual editing and no app needed** — a GitHub Action runs on
+GitHub's servers every 6 hours and updates the results for every sport.
 
-| Series | How it stays current | Runs when |
+| Series | Source the Action uses | Reliability |
 |---|---|---|
-| **F1** | Live API call in the browser **and** a GitHub Action | Always (browser) + every 6h (Action) |
-| **MotoGP** | GitHub Action (best-effort feed) + weekly task | Every 6h + weekly |
-| **Supercross / Motocross / Hard Enduro** | Weekly Cowork task pushes updates | Mondays (while Claude app is open) |
+| **F1** | Jolpica/Ergast API + live browser fetch | Exact |
+| **MotoGP / Supercross / Motocross / Hard Enduro / Tour de France** | Wikipedia season page (parsed by the Action) | Best-effort — updates within hours of each event; a parse miss just retries next run |
 
----
+The site never breaks if a scrape fails: the Action only fills a winner it
+successfully read, and never clears an existing value.
 
 ## Files
 
 ```
-race-tracker.html            the page (reads ./data.json, falls back to embedded data)
-data.json                    the data the hosted site shows — what gets auto-updated
-scripts/update-data.mjs      Node script the Action runs (F1 + MotoGP)
-.github/workflows/refresh.yml GitHub Action, runs every 6 hours on GitHub's servers
+index.html                    the page (reads ./data.json, embedded data as fallback)
+data.json                     the data shown on the site — updated automatically
+scripts/update-data.mjs       the updater the Action runs (F1 API + Wikipedia)
+.github/workflows/refresh.yml the schedule + permissions (every 6 hours)
 ```
 
-## One-time setup
+## One-time setup (browser only — no terminal)
 
-1. **Create the repo & push these files.** In this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "Race tracker"
-   git branch -M main
-   git remote add origin https://github.com/<you>/<repo>.git
-   git push -u origin main
-   ```
-
-2. **Enable GitHub Pages.** Repo → **Settings → Pages** → *Build and deployment* →
-   *Deploy from a branch* → branch **main**, folder **/ (root)** → **Save**.
-   Your site appears at `https://<you>.github.io/<repo>/race-tracker.html`.
-
-3. **Let the Action commit back.** Repo → **Settings → Actions → General** →
-   *Workflow permissions* → select **Read and write permissions** → **Save**.
-   (This lets the every-6-hours job push the refreshed `data.json`.)
-
-4. **Test the Action now.** Repo → **Actions** tab → *Refresh race data* → **Run workflow**.
-   After it runs, check that `data.json`'s `updated` timestamp changed.
-
-5. **Weekly task → live site.** The Cowork task "race-tracker-weekly-refresh" updates
-   `data.json` for the dirt-bike series and runs `git push`. For that push to work,
-   this folder must be the same git repo from step 1 with push access cached
-   (the `git push` in step 1 sets that up). The task only runs while the Claude
-   desktop app is open.
+1. **Create the repo** at github.com/new → name it, set **Public**, no README.
+2. **Upload the files.** In Finder press **Cmd+Shift+.** to reveal the hidden
+   `.github` folder, then **Add file → Upload files** and drag everything in
+   (keep the `scripts` and `.github/workflows` folders). Commit.
+   - If `.github` won't drag in, use **Add file → Create new file**, type the
+     path `.github/workflows/refresh.yml` (the slashes make the folders), paste
+     the contents, commit. Repeat for `scripts/update-data.mjs`.
+3. **Enable Pages.** Settings → Pages → Deploy from a branch → **main / (root)**.
+   Site lives at `https://<you>.github.io/<repo>/` (needs an `index.html`, which
+   this is).
+4. **Let the Action write back.** Settings → Actions → General → Workflow
+   permissions → **Read and write permissions** → Save. *(Required, or the
+   Action can't save the refreshed data.json.)*
+5. **Kick it off.** Actions tab → **Refresh race data** → **Run workflow**.
+   It runs itself every 6 hours after that.
 
 ## Notes
 
-- **F1 is the most autonomous:** it updates in every visitor's browser regardless of
-  the Action, so even between commits it shows the latest results.
-- **MotoGP via the Action is best-effort** (it reads motogp.com's unofficial feed). The
-  weekly task is the guaranteed updater for MotoGP if the feed changes shape.
-- **Editing by hand:** change `data.json` and commit — the hosted page updates on refresh.
-- Change the Action frequency by editing the `cron` line in `refresh.yml`
-  (e.g. `0 7 * * 1` = Mondays 7am UTC).
+- **F1** also refreshes live in every visitor's browser, so it's current even
+  between Action runs, and its click-to-expand shows the full finishing order.
+- The other sports' click-to-expand shows the winner; a fuller podium appears if
+  the optional weekly Cowork task (or a manual edit) adds a `results` array.
+- **To adjust frequency**, edit the `cron` line in `refresh.yml`
+  (`0 */6 * * *` = every 6 hours).
+- **The weekly Cowork task is now optional** — the Action is the real engine.
+  Keep the task if you want a human-quality correction pass; otherwise you can
+  disable it in the Scheduled sidebar and rely entirely on GitHub.

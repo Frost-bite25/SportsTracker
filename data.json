@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-11T11:51:28.378Z",
-  "note": "Auto-updated. F1 + MotoGP via GitHub Action; SX/MX/Hard Enduro via weekly Cowork task.",
+  "updated": "2026-07-02T07:29:02.618Z",
+  "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
       "rounds": [
@@ -587,6 +587,157 @@
           "date": "2026-10-25",
           "name": "Hixpania Hard Enduro",
           "venue": "Aguilar de Campoo, Spain · Oct 23–25",
+          "winner": ""
+        }
+      ]
+    },
+    "tdf": {
+      "rounds": [
+        {
+          "r": 1,
+          "date": "2026-07-04",
+          "name": "Barcelona (Team Time Trial)",
+          "venue": "Team time trial · 19.7 km",
+          "winner": ""
+        },
+        {
+          "r": 2,
+          "date": "2026-07-05",
+          "name": "Tarragona → Barcelona",
+          "venue": "Hilly · 178 km",
+          "winner": ""
+        },
+        {
+          "r": 3,
+          "date": "2026-07-06",
+          "name": "Granollers → Les Angles",
+          "venue": "Mountain · 196 km",
+          "winner": ""
+        },
+        {
+          "r": 4,
+          "date": "2026-07-07",
+          "name": "Carcassonne → Foix",
+          "venue": "Hilly · 182 km",
+          "winner": ""
+        },
+        {
+          "r": 5,
+          "date": "2026-07-08",
+          "name": "Lannemezan → Pau",
+          "venue": "Flat · 158 km",
+          "winner": ""
+        },
+        {
+          "r": 6,
+          "date": "2026-07-09",
+          "name": "Pau → Gavarnie-Gèdre",
+          "venue": "Mountain summit finish · 186 km",
+          "winner": ""
+        },
+        {
+          "r": 7,
+          "date": "2026-07-10",
+          "name": "Hagetmau → Bordeaux",
+          "venue": "Flat · 175 km",
+          "winner": ""
+        },
+        {
+          "r": 8,
+          "date": "2026-07-11",
+          "name": "Périgueux → Bergerac",
+          "venue": "Flat · 182 km",
+          "winner": ""
+        },
+        {
+          "r": 9,
+          "date": "2026-07-12",
+          "name": "Malemort → Ussel",
+          "venue": "Hilly · 185 km",
+          "winner": ""
+        },
+        {
+          "r": 10,
+          "date": "2026-07-14",
+          "name": "Aurillac → Le Lioran",
+          "venue": "Mountain · 167 km",
+          "winner": ""
+        },
+        {
+          "r": 11,
+          "date": "2026-07-15",
+          "name": "Vichy → Nevers",
+          "venue": "Flat · 161 km",
+          "winner": ""
+        },
+        {
+          "r": 12,
+          "date": "2026-07-16",
+          "name": "Magny-Cours → Chalon-sur-Saône",
+          "venue": "Flat · 181 km",
+          "winner": ""
+        },
+        {
+          "r": 13,
+          "date": "2026-07-17",
+          "name": "Dole → Belfort",
+          "venue": "Hilly · 205 km",
+          "winner": ""
+        },
+        {
+          "r": 14,
+          "date": "2026-07-18",
+          "name": "Mulhouse → Le Markstein Fellering",
+          "venue": "Mountain · 155 km",
+          "winner": ""
+        },
+        {
+          "r": 15,
+          "date": "2026-07-19",
+          "name": "Champagnole → Plateau de Solaison",
+          "venue": "Mountain summit finish · 184 km",
+          "winner": ""
+        },
+        {
+          "r": 16,
+          "date": "2026-07-21",
+          "name": "Évian-les-Bains → Thonon-les-Bains",
+          "venue": "Individual time trial · 26 km",
+          "winner": ""
+        },
+        {
+          "r": 17,
+          "date": "2026-07-22",
+          "name": "Chambéry → Voiron",
+          "venue": "Flat · 175 km",
+          "winner": ""
+        },
+        {
+          "r": 18,
+          "date": "2026-07-23",
+          "name": "Voiron → Orcières-Merlette",
+          "venue": "Mountain summit finish · 185 km",
+          "winner": ""
+        },
+        {
+          "r": 19,
+          "date": "2026-07-24",
+          "name": "Gap → Alpe d'Huez",
+          "venue": "Mountain summit finish · 128 km",
+          "winner": ""
+        },
+        {
+          "r": 20,
+          "date": "2026-07-25",
+          "name": "Le Bourg-d'Oisans → Alpe d'Huez",
+          "venue": "Mountain summit finish · 171 km",
+          "winner": ""
+        },
+        {
+          "r": 21,
+          "date": "2026-07-26",
+          "name": "Thoiry → Paris (Champs-Élysées)",
+          "venue": "Flat · 130 km",
           "winner": ""
         }
       ]
