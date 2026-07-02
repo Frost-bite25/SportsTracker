@@ -3,505 +3,396 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Race Tracker 2026 — F1 · MotoGP · SX/MX · Hard Enduro · Tour de France</title>
-<!--
-  ============================================================================
-  HOW THIS PAGE STAYS UP TO DATE  (fully automatic once on GitHub)
-  ============================================================================
-  • F1  — updates ITSELF. Each visit it pulls the live 2026 schedule + winners
-          from the free Jolpica/Ergast API. Offline? it falls back to the data
-          below. A "● LIVE" badge shows when live data loaded.
-
-  • MotoGP / Supercross / Motocross / Hard Enduro / Tour de France — no public
-          API, so the GitHub Action reads each series' Wikipedia season page
-          every 6 hours (on GitHub's servers, no computer needed) and writes the
-          winners into data.json. Fully automatic. A weekly Cowork task is an
-          OPTIONAL extra that can correct anything the scraper misses.
-
-  • Full results — tap any completed round to expand it. F1 loads the complete
-          finishing order live from the API; other series show the winner (plus
-          a podium if one has been stored in the data).
-
-  ----------------------------------------------------------------------------
-  DATA: on load the page fetches same-origin data.json and uses it for every
-  series. If data.json is missing (opened straight off disk) it falls back to
-  the SERIES data embedded below, so it always displays.
-
-  EDIT BY HAND: change data.json (or the SERIES seed below). Each round:
-      { r:1, date:"2026-03-08", name:"Australian GP", venue:"…", winner:"" }
-      date = race day YYYY-MM-DD · winner "" until run · prov:true = unconfirmed date
-
-  HOST FREE ON GITHUB: push this folder to a repo, Settings > Pages > deploy
-  from branch (root). See SETUP-github-pages.md.
-  ============================================================================
--->
+<title>Plett Airport Business Park — Tenant Lease Tracker</title>
 <style>
   :root{
-    --bg:#0a0c10; --panel:#13161d; --panel2:#191d26; --line:#262b36;
-    --txt:#e8eaf0; --muted:#8a92a4; --gold:#ffcb45;
+    --navy:#1F3864;
+    --navy-dark:#152A4A;
+    --paper:#F5F6F8;
+    --card:#FFFFFF;
+    --border:#E1E4E9;
+    --text:#242A33;
+    --muted:#6B7280;
+    --green-bg:#E6F4EA; --green-text:#1E7B34;
+    --yellow-bg:#FFF4CE; --yellow-text:#8A6400;
+    --red-bg:#FBE1E1;   --red-text:#9C1F1F;
+    --grey-bg:#EAEAEA;  --grey-text:#5A5A5A;
+    --blue-bg:#E8EEFB;  --blue-text:#1F3864;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
+  *{box-sizing:border-box;}
   body{
-    background:var(--bg); color:var(--txt);
+    margin:0;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5; -webkit-font-smoothing:antialiased;
+    background:var(--paper);
+    color:var(--text);
   }
-  header.top{
-    padding:26px 20px 18px; text-align:center;
-    border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg,#10131a 0%,var(--bg) 100%);
+  header{
+    background:linear-gradient(135deg,var(--navy),var(--navy-dark));
+    color:#fff;
+    padding:28px 32px 22px;
   }
-  header.top h1{font-size:22px;letter-spacing:.5px;font-weight:800}
-  header.top p{color:var(--muted);font-size:13px;margin-top:4px}
+  header h1{margin:0 0 4px;font-size:1.5rem;font-weight:700;}
+  header .sub{font-size:.85rem;color:#C9D3E8;}
+  header .asof{font-size:.8rem;color:#AFC0E0;margin-top:10px;}
 
-  .tabs{
-    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
-    padding:16px 12px;position:sticky;top:0;z-index:20;
-    background:rgba(10,12,16,.92);backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .tab{
-    border:1px solid var(--line);background:var(--panel);color:var(--muted);
-    padding:9px 16px;border-radius:999px;cursor:pointer;font-size:13px;
-    font-weight:700;letter-spacing:.3px;transition:.15s;white-space:nowrap;
-  }
-  .tab:hover{color:var(--txt);border-color:var(--accent)}
-  .tab.active{color:#fff;background:var(--accent);border-color:var(--accent)}
+  .wrap{max-width:1560px;margin:0 auto;padding:24px 20px 60px;}
 
-  .wrap{max-width:860px;margin:0 auto;padding:22px 16px 60px}
-
-  .next{
-    border:1px solid var(--accent);border-radius:14px;padding:18px 20px;
-    background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,transparent),var(--panel));
-    margin-bottom:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  .kpis{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:14px;
+    margin-bottom:28px;
   }
-  .next .lbl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:800}
-  .next .nm{font-size:20px;font-weight:800;margin-top:3px}
-  .next .vn{color:var(--muted);font-size:13px;margin-top:2px}
-  .count{text-align:center;min-width:84px}
-  .count .num{font-size:30px;font-weight:800;line-height:1;color:var(--accent)}
-  .count .unit{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
-  .count .when{font-size:12px;color:var(--muted)}
-
-  .live{
-    display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;
-    letter-spacing:.5px;color:#27c463;margin-left:8px;vertical-align:middle;
+  .kpi{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:16px 18px;
   }
-  .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#27c463;
-    box-shadow:0 0 0 0 rgba(39,196,99,.6);animation:pulse 1.8s infinite}
-  .live.cached{color:var(--muted)} .live.cached::before{background:var(--muted);animation:none}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(39,196,99,.6)}70%{box-shadow:0 0 0 7px rgba(39,196,99,0)}100%{box-shadow:0 0 0 0 rgba(39,196,99,0)}}
+  .kpi .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600;}
+  .kpi .value{font-size:1.5rem;font-weight:700;margin-top:4px;color:var(--navy);}
+  .kpi .value.warn{color:var(--red-text);}
 
-  .sec-title{
-    font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);
-    font-weight:800;margin:24px 4px 12px;border-left:3px solid var(--accent);padding-left:10px;
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
   }
-  .round{margin-bottom:9px}
+  @media (max-width:1000px){
+    .cards{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:560px){
+    .cards{grid-template-columns:1fr;}
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .card-head{
+    padding:14px 14px 10px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .card-head .title-block{display:flex;flex-direction:column;}
+  .unit-badge{
+    display:inline-block;
+    background:var(--navy);
+    color:#fff;
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.03em;
+    padding:3px 9px;
+    border-radius:999px;
+    margin-bottom:6px;
+  }
+  .card-head h2{margin:0;font-size:.98rem;font-weight:700;line-height:1.25;}
+  .card-head .legal{font-size:.72rem;color:var(--muted);margin-top:3px;line-height:1.35;}
+  .status-pill{
+    font-size:.68rem;
+    font-weight:700;
+    padding:4px 9px;
+    border-radius:999px;
+    white-space:nowrap;
+    height:fit-content;
+    align-self:flex-start;
+  }
+  .status-green{background:var(--green-bg);color:var(--green-text);}
+  .status-yellow{background:var(--yellow-bg);color:var(--yellow-text);}
+  .status-red{background:var(--red-bg);color:var(--red-text);}
+  .status-grey{background:var(--grey-bg);color:var(--grey-text);}
+
+  .card-body{padding:12px 14px 4px;flex:1;}
   .row{
-    display:flex;align-items:center;gap:14px;padding:13px 16px;border:1px solid var(--line);
-    border-radius:11px;background:var(--panel);transition:.15s;
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    padding:6px 0;
+    border-bottom:1px dashed var(--border);
+    font-size:.78rem;
   }
-  .row.clickable{cursor:pointer}
-  .row:hover{background:var(--panel2);border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
-  .row.done{opacity:.82}
-  .row.done:hover{opacity:1}
-  .chev{flex:0 0 auto;color:var(--muted);font-size:12px;transition:transform .15s}
-  .round.open .chev{transform:rotate(90deg);color:var(--accent)}
-  .round.open .row{border-radius:11px 11px 0 0;border-bottom-color:transparent;background:var(--panel2)}
-  .details{
-    border:1px solid var(--line);border-top:none;border-radius:0 0 11px 11px;
-    background:var(--panel2);padding:8px 14px 12px;
+  .row:last-child{border-bottom:none;}
+  .row .k{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;}
+  .row .v{font-weight:600;text-align:left;}
+  .rent-highlight{
+    background:var(--blue-bg);
+    border-radius:8px;
+    padding:9px 10px;
+    margin:6px 0 4px;
   }
-  .res{width:100%;border-collapse:collapse;font-size:13px}
-  .res td{padding:5px 6px;border-bottom:1px solid var(--line)}
-  .res tr:last-child td{border-bottom:none}
-  .res .pos{color:var(--muted);width:30px;font-weight:800;text-align:center}
-  .res .ex{color:var(--muted);text-align:right;font-size:12px;white-space:nowrap}
-  .res tr.w1 .pos{color:var(--gold)}
-  .res tr.w1 td{font-weight:700}
-  .dmsg{color:var(--muted);font-size:13px;line-height:1.55;padding:2px 0}
-  .dmsg strong{color:var(--txt)}
-  .dloading{color:var(--muted);font-size:13px;padding:2px 0}
-  .rd{
-    flex:0 0 42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;
-    font-weight:800;font-size:15px;background:color-mix(in srgb,var(--accent) 18%,var(--panel2));
-    color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  .rent-highlight .k{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;}
+  .rent-highlight .v{font-size:1.05rem;font-weight:700;color:var(--navy);margin-top:2px;}
+  .contact{font-size:.76rem;color:var(--muted);margin-top:2px;line-height:1.4;word-break:break-word;}
+  .contact a{color:var(--navy);text-decoration:none;}
+  .contact a:hover{text-decoration:underline;}
+
+  details{border-top:1px solid var(--border);padding:9px 14px 12px;}
+  summary{
+    cursor:pointer;
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--navy);
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
   }
-  .info{flex:1;min-width:0}
-  .info .n{font-weight:700;font-size:15px}
-  .info .v{color:var(--muted);font-size:12.5px;margin-top:1px;overflow:hidden;text-overflow:ellipsis}
-  .meta{text-align:right;flex:0 0 auto;min-width:96px}
-  .meta .d{font-size:13px;font-weight:600;white-space:nowrap}
-  .win{
-    display:inline-block;margin-top:3px;font-size:12px;font-weight:700;color:#0a0c10;
-    background:var(--gold);padding:2px 8px;border-radius:6px;white-space:nowrap;
+  summary::-webkit-details-marker{display:none;}
+  summary:before{content:"▸";display:inline-block;transition:transform .15s;}
+  details[open] summary:before{transform:rotate(90deg);}
+  .flag-text{font-size:.78rem;color:var(--text);margin-top:8px;line-height:1.5;}
+
+  footer{
+    text-align:center;
+    font-size:.75rem;
+    color:var(--muted);
+    padding:20px;
   }
-  .tag{font-size:11px;color:var(--muted);margin-top:3px;display:block}
-  .prov{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
-    color:var(--gold);border:1px solid color-mix(in srgb,var(--gold) 50%,transparent);
-    padding:1px 6px;border-radius:5px;margin-left:6px;vertical-align:middle}
-  .empty{color:var(--muted);font-size:13px;padding:10px 4px}
-  footer{color:var(--muted);font-size:12px;text-align:center;padding:24px 16px 40px;border-top:1px solid var(--line)}
-  footer code{background:var(--panel2);padding:1px 6px;border-radius:5px;color:var(--txt)}
+
+  @media (max-width:480px){
+    header{padding:20px 18px;}
+    .wrap{padding:18px 12px 40px;}
+  }
 </style>
 </head>
 <body>
-<header class="top">
-  <h1>🏁 Race Tracker 2026</h1>
-  <p>Fixtures &amp; results — F1 · MotoGP · Supercross · Motocross · Hard Enduro · Tour de France</p>
+
+<header>
+  <h1>Plett Airport Business Park — Tenant Lease Tracker</h1>
+  <div class="sub">Landlord: Black Oystercatcher Investments 5 (Pty) Ltd</div>
+  <div class="asof" id="asof"></div>
 </header>
 
-<nav class="tabs" id="tabs"></nav>
-<main class="wrap" id="view"></main>
+<div class="wrap">
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="cards" id="cards"></div>
+
+</div>
 
 <footer>
-  F1 live from the Jolpica/Ergast API · other series auto-updated from Wikipedia by the GitHub Action every 6h ·
-  tap a completed round for full results · some Hard Enduro dates provisional.
+  Generated from signed lease agreements. Figures marked with a flag icon carry a data caveat — see each unit's "Notes &amp; flags" panel.
 </footer>
 
 <script>
-/* ===========================================================================
-   THE DATA — built-in fallback + seed for data.json.
-   date = race day (YYYY-MM-DD). winner = "" until run. prov:true = unconfirmed.
-   =========================================================================== */
-const SERIES = {
-  f1: {
-    label:"Formula 1", tab:"🏎️ F1", accent:"#e10600", unit:"Grand Prix",
-    live:{ races:"https://api.jolpi.ca/ergast/f1/2026/races.json",
-           winners:"https://api.jolpi.ca/ergast/f1/2026/results/1.json" },
-    rounds: [
-      { r:1,  date:"2026-03-08", name:"Australian GP",          venue:"Albert Park, Melbourne",            winner:"George Russell" },
-      { r:2,  date:"2026-03-15", name:"Chinese GP",             venue:"Shanghai Int'l Circuit (Sprint)",   winner:"Kimi Antonelli" },
-      { r:3,  date:"2026-03-29", name:"Japanese GP",            venue:"Suzuka Circuit",                    winner:"Kimi Antonelli" },
-      { r:4,  date:"2026-05-03", name:"Miami GP",               venue:"Miami Int'l Autodrome (Sprint)",    winner:"Kimi Antonelli" },
-      { r:5,  date:"2026-05-24", name:"Canadian GP",            venue:"Circuit Gilles Villeneuve, Montreal (Sprint)", winner:"Kimi Antonelli" },
-      { r:6,  date:"2026-06-07", name:"Monaco GP",              venue:"Circuit de Monaco",                 winner:"Kimi Antonelli" },
-      { r:7,  date:"2026-06-14", name:"Barcelona-Catalunya GP", venue:"Circuit de Barcelona-Catalunya",    winner:"" },
-      { r:8,  date:"2026-06-28", name:"Austrian GP",            venue:"Red Bull Ring, Spielberg",          winner:"" },
-      { r:9,  date:"2026-07-05", name:"British GP",             venue:"Silverstone Circuit (Sprint)",      winner:"" },
-      { r:10, date:"2026-07-19", name:"Belgian GP",             venue:"Spa-Francorchamps",                 winner:"" },
-      { r:11, date:"2026-07-26", name:"Hungarian GP",           venue:"Hungaroring, Mogyoród",             winner:"" },
-      { r:12, date:"2026-08-23", name:"Dutch GP",               venue:"Circuit Zandvoort (Sprint)",        winner:"" },
-      { r:13, date:"2026-09-06", name:"Italian GP",             venue:"Monza Circuit",                     winner:"" },
-      { r:14, date:"2026-09-13", name:"Spanish GP",             venue:"Madring, Madrid (debut)",           winner:"" },
-      { r:15, date:"2026-09-26", name:"Azerbaijan GP",          venue:"Baku City Circuit",                 winner:"" },
-      { r:16, date:"2026-10-11", name:"Singapore GP",           venue:"Marina Bay Street Circuit (Sprint)",winner:"" },
-      { r:17, date:"2026-10-25", name:"United States GP",       venue:"Circuit of the Americas, Austin",   winner:"" },
-      { r:18, date:"2026-11-01", name:"Mexico City GP",         venue:"Autódromo Hermanos Rodríguez",      winner:"" },
-      { r:19, date:"2026-11-08", name:"São Paulo GP",           venue:"Interlagos, São Paulo",             winner:"" },
-      { r:20, date:"2026-11-21", name:"Las Vegas GP",           venue:"Las Vegas Strip Circuit",           winner:"" },
-      { r:21, date:"2026-11-29", name:"Qatar GP",               venue:"Lusail International Circuit",      winner:"" },
-      { r:22, date:"2026-12-06", name:"Abu Dhabi GP",           venue:"Yas Marina Circuit",                winner:"" }
-    ]
+const TENANTS = [
+  {
+    unit: "31A",
+    trading: "The Auto Vault",
+    legal: "The Tyre Vault (Pty) Ltd — Reg 2016/405477/07",
+    contact: "Chris Hart",
+    email: "chrishart7441@gmail.com",
+    phone: "",
+    start: "2026-04-01",
+    end: "2028-02-29",
+    base: 29790,
+    rate: 0.08,
+    model: "annual",
+    dueDay: "1st of month",
+    deposit: 29790,
+    renewalNotice: "3 months before expiry",
+    earlyTermNotice: "Not specified in signed pages",
+    cancelPenalty: "Not specified in signed pages",
+    notes: "Start date handwritten correction on the original: “1 March 2026” struck through, “April” written above it — recorded here as 1 April 2026, confirm against the tenant's original signed copy. Rent escalates 8% at each lease anniversary (Clause 8.2 governs escalation for every subsequent year of the “Lease Period”, a term Clause 2.1.2 defines to include the whole term, not just a formal post-expiry renewal). Early termination notice / cancellation penalty clauses were not present in the pages provided for this lease."
   },
-
-  motogp: {
-    label:"MotoGP", tab:"🏍️ MotoGP", accent:"#2d6cdf", unit:"Grand Prix",
-    rounds: [
-      { r:1,  date:"2026-03-01", name:"Thailand GP",     venue:"Chang Int'l Circuit, Buriram",        winner:"" },
-      { r:2,  date:"2026-03-22", name:"Brazil GP",       venue:"Autódromo Ayrton Senna, Goiânia",     winner:"" },
-      { r:3,  date:"2026-03-29", name:"Americas GP",     venue:"Circuit of the Americas, Austin",     winner:"" },
-      { r:4,  date:"2026-04-12", name:"Qatar GP",        venue:"Lusail Int'l Circuit (night)",        winner:"" },
-      { r:5,  date:"2026-04-26", name:"Spanish GP",      venue:"Circuito de Jerez–Ángel Nieto",       winner:"" },
-      { r:6,  date:"2026-05-10", name:"French GP",       venue:"Bugatti Circuit, Le Mans",            winner:"" },
-      { r:7,  date:"2026-05-17", name:"Catalan GP",      venue:"Circuit de Barcelona-Catalunya",      winner:"" },
-      { r:8,  date:"2026-05-31", name:"Italian GP",      venue:"Mugello Circuit",                     winner:"" },
-      { r:9,  date:"2026-06-07", name:"Hungarian GP",    venue:"Balaton Park Circuit",                winner:"" },
-      { r:10, date:"2026-06-21", name:"Czech GP",        venue:"Brno Circuit",                        winner:"" },
-      { r:11, date:"2026-06-28", name:"Dutch TT",        venue:"TT Circuit Assen",                    winner:"" },
-      { r:12, date:"2026-07-12", name:"German GP",       venue:"Sachsenring",                         winner:"" },
-      { r:13, date:"2026-08-09", name:"British GP",      venue:"Silverstone Circuit",                 winner:"" },
-      { r:14, date:"2026-08-30", name:"Aragon GP",       venue:"MotorLand Aragón",                    winner:"" },
-      { r:15, date:"2026-09-13", name:"San Marino GP",   venue:"Misano World Circuit",                winner:"" },
-      { r:16, date:"2026-09-20", name:"Austrian GP",     venue:"Red Bull Ring, Spielberg",            winner:"" },
-      { r:17, date:"2026-10-04", name:"Japanese GP",     venue:"Mobility Resort Motegi",              winner:"" },
-      { r:18, date:"2026-10-11", name:"Indonesian GP",   venue:"Mandalika Int'l Circuit",             winner:"" },
-      { r:19, date:"2026-10-25", name:"Australian GP",   venue:"Phillip Island Circuit",              winner:"" },
-      { r:20, date:"2026-11-01", name:"Malaysian GP",    venue:"Sepang Int'l Circuit",                winner:"" },
-      { r:21, date:"2026-11-15", name:"Portuguese GP",   venue:"Algarve Int'l Circuit, Portimão",     winner:"" },
-      { r:22, date:"2026-11-22", name:"Valencia GP",     venue:"Circuit Ricardo Tormo",               winner:"" }
-    ]
+  {
+    unit: "31B",
+    trading: "Play Pickleball Plett",
+    legal: "Karma Blue (Pty) Ltd — Reg 2015/100603/07",
+    contact: "Debra Ann Hill",
+    email: "",
+    phone: "",
+    start: "2026-01-01",
+    end: "2026-12-31",
+    base: 29790,
+    rate: 0.07,
+    model: "pickleball",
+    dueDay: "Within 7 days of month-end (Yr 1 revenue share)",
+    deposit: 0,
+    renewalNotice: "No fixed notice period — reviewed at year-end",
+    earlyTermNotice: "30 days' written notice (material breach)",
+    cancelPenalty: "None specified",
+    notes: "Year 1 (1 Jan – 31 Dec 2026) has no fixed rent — tenant instead pays 50% of gross revenue monthly, within 7 days of month-end. From Year 2 (1 Jan 2027) rent becomes a fixed R29,790/month if both parties agree the business is viable, then escalates 7% at each subsequent anniversary. The Landlord's signature/date was not completed on the copy provided (tenant signed 5 Dec 2025) — confirm the agreement is fully countersigned. No deposit is specified."
   },
-
-  sx: {
-    label:"AMA Supercross", tab:"🏟️ Supercross", accent:"#ff7a00", unit:"Round",
-    rounds: [
-      { r:1,  date:"2026-01-10", name:"Anaheim 1",     venue:"Angel Stadium, Anaheim, CA",            winner:"" },
-      { r:2,  date:"2026-01-17", name:"San Diego",     venue:"Snapdragon Stadium, San Diego, CA",     winner:"" },
-      { r:3,  date:"2026-01-24", name:"Anaheim 2",     venue:"Angel Stadium, Anaheim, CA",            winner:"" },
-      { r:4,  date:"2026-01-31", name:"Houston",       venue:"NRG Stadium, Houston, TX · Triple Crown", winner:"" },
-      { r:5,  date:"2026-02-07", name:"Glendale",      venue:"State Farm Stadium, Glendale, AZ",      winner:"" },
-      { r:6,  date:"2026-02-14", name:"Seattle",       venue:"Lumen Field, Seattle, WA",              winner:"" },
-      { r:7,  date:"2026-02-21", name:"Arlington",     venue:"AT&T Stadium, Arlington, TX",           winner:"" },
-      { r:8,  date:"2026-02-28", name:"Daytona",       venue:"Daytona Int'l Speedway, FL",            winner:"" },
-      { r:9,  date:"2026-03-07", name:"Indianapolis",  venue:"Lucas Oil Stadium, IN · Triple Crown",  winner:"" },
-      { r:10, date:"2026-03-21", name:"Birmingham",    venue:"Protective Stadium, AL · Showdown",     winner:"" },
-      { r:11, date:"2026-03-28", name:"Detroit",       venue:"Ford Field, Detroit, MI",               winner:"" },
-      { r:12, date:"2026-04-04", name:"St. Louis",     venue:"The Dome at America's Center, MO · Showdown", winner:"" },
-      { r:13, date:"2026-04-11", name:"Nashville",     venue:"Nissan Stadium, Nashville, TN",         winner:"" },
-      { r:14, date:"2026-04-18", name:"Cleveland",     venue:"Huntington Bank Field, OH",             winner:"" },
-      { r:15, date:"2026-04-25", name:"Philadelphia",  venue:"Lincoln Financial Field, PA",           winner:"" },
-      { r:16, date:"2026-05-02", name:"Denver",        venue:"Empower Field at Mile High, CO",        winner:"" },
-      { r:17, date:"2026-05-09", name:"Salt Lake City",venue:"Rice-Eccles Stadium, UT · Final · Showdown", winner:"" }
-    ]
+  {
+    unit: "32A",
+    trading: "The Pork Crackling Company",
+    legal: "The Pork Crackling Company (Pty) Ltd — Reg 2023/584936/07",
+    contact: "Craig Lellyett / Tony Johnson",
+    email: "craig@theporkcrackling.co.za",
+    email2: "tony@theporkcrackling.co.za",
+    phone: "071 442 0646 / 082 521 5865",
+    start: "2025-10-01",
+    end: "2030-09-30",
+    base: 29790,
+    rate: 0.08,
+    model: "annual",
+    dueDay: "1st of month",
+    deposit: 29790,
+    renewalNotice: "3 months before expiry",
+    earlyTermNotice: "3 calendar months' written notice",
+    cancelPenalty: "3 months' rent if cancelled within first 6 months (before ~1 Apr 2026)",
+    notes: "Tenant's physical/postal address was changed at signing from “7 Thesen Island, Knysna” to “65 Heuwel Street, Wittedrif” (handwritten in blue ink) — this tracker uses the updated address; confirm which is current. Rent escalates 8% at each lease anniversary throughout the full 5-year initial term (Clause 8.2 governs every subsequent year of the “Lease Period”, defined in Clause 2.1.2 to include the whole term). Improvement costs listed in Clause 15 were left blank in the signed copy — no amortized addition to rent has been assumed."
   },
-
-  mx: {
-    label:"AMA Pro Motocross", tab:"⛰️ Motocross", accent:"#27c463", unit:"Round",
-    rounds: [
-      { r:1,  date:"2026-05-30", name:"Fox Raceway National",   venue:"Fox Raceway, Pala, CA",                 winner:"" },
-      { r:2,  date:"2026-06-06", name:"Hangtown Classic",       venue:"Prairie City OHV, Rancho Cordova, CA",  winner:"" },
-      { r:3,  date:"2026-06-13", name:"Thunder Valley National",venue:"Thunder Valley MX, Lakewood, CO",       winner:"" },
-      { r:4,  date:"2026-06-20", name:"High Point National",    venue:"High Point Raceway, Mt Morris, PA",     winner:"" },
-      { r:5,  date:"2026-07-04", name:"RedBud National",        venue:"RedBud MX, Buchanan, MI",               winner:"" },
-      { r:6,  date:"2026-07-11", name:"Southwick National",     venue:"The Wick 338, Southwick, MA",           winner:"" },
-      { r:7,  date:"2026-07-18", name:"Spring Creek National",  venue:"Spring Creek MX, Millville, MN",        winner:"" },
-      { r:8,  date:"2026-07-25", name:"Washougal National",     venue:"Washougal MX Park, WA",                 winner:"" },
-      { r:9,  date:"2026-08-15", name:"Unadilla National",      venue:"Unadilla MX, New Berlin, NY",           winner:"" },
-      { r:10, date:"2026-08-22", name:"Budds Creek National",   venue:"Budds Creek, Mechanicsville, MD",       winner:"" },
-      { r:11, date:"2026-08-29", name:"Ironman National",       venue:"Ironman Raceway, Crawfordsville, IN",   winner:"" }
-    ]
-  },
-
-  he: {
-    label:"World Hard Enduro", tab:"🪨 Hard Enduro", accent:"#f5b800", unit:"Round",
-    /* FIM Hard Enduro World Championship — calendar as amended 22 Apr 2026.
-       Wild Woods (Italy) dropped; Abestone moved to 4–6 Sep; Roof of Africa
-       moved to Sep; Round 4 unconfirmed (possibly Red Bull Romaniacs). */
-    rounds: [
-      { r:1, date:"2026-04-19", name:"24MX Alestrem",            venue:"Alès, France · Apr 17–19",          winner:"" },
-      { r:2, date:"2026-05-03", name:"Extreme XL Lagares",       venue:"Porto, Portugal · May 1–3",         winner:"" },
-      { r:3, date:"2026-06-20", name:"Silver Kings Hard Enduro", venue:"Idaho, USA · Jun 18–20",            winner:"" },
-      { r:4, date:"2026-08-01", name:"Round 4 — TBC",            venue:"Possibly Red Bull Romaniacs, Romania · Jul 28–Aug 1", winner:"", prov:true },
-      { r:5, date:"2026-08-22", name:"Forza Orza",               venue:"Sweden · Aug 20–22",                winner:"" },
-      { r:6, date:"2026-09-06", name:"Abestone Rodeo Miravalle", venue:"Abetone, Italy · Sep 4–6",          winner:"" },
-      { r:7, date:"2026-09-26", name:"Roof of Africa",           venue:"Lesotho · Sep 23–26",               winner:"", prov:true },
-      { r:8, date:"2026-10-10", name:"Sea to Sky",               venue:"Kemer, Turkey · Oct 8–10",          winner:"" },
-      { r:9, date:"2026-10-25", name:"Hixpania Hard Enduro",     venue:"Aguilar de Campoo, Spain · Oct 23–25", winner:"" }
-    ]
-  },
-
-  tdf: {
-    label:"Tour de France", tab:"🚴 Tour de France", accent:"#f7d417", unit:"Stage",
-    /* 2026 Tour de France — 113th edition, 4–26 July, Grand Départ Barcelona.
-       "winner" = stage winner. Rest days: 13 & 20 July. */
-    rounds: [
-      { r:1,  date:"2026-07-04", name:"Barcelona (Team Time Trial)",        venue:"Team time trial · 19.7 km",        winner:"" },
-      { r:2,  date:"2026-07-05", name:"Tarragona → Barcelona",              venue:"Hilly · 178 km",                   winner:"" },
-      { r:3,  date:"2026-07-06", name:"Granollers → Les Angles",            venue:"Mountain · 196 km",                winner:"" },
-      { r:4,  date:"2026-07-07", name:"Carcassonne → Foix",                 venue:"Hilly · 182 km",                   winner:"" },
-      { r:5,  date:"2026-07-08", name:"Lannemezan → Pau",                   venue:"Flat · 158 km",                    winner:"" },
-      { r:6,  date:"2026-07-09", name:"Pau → Gavarnie-Gèdre",               venue:"Mountain summit finish · 186 km",  winner:"" },
-      { r:7,  date:"2026-07-10", name:"Hagetmau → Bordeaux",                venue:"Flat · 175 km",                    winner:"" },
-      { r:8,  date:"2026-07-11", name:"Périgueux → Bergerac",               venue:"Flat · 182 km",                    winner:"" },
-      { r:9,  date:"2026-07-12", name:"Malemort → Ussel",                   venue:"Hilly · 185 km",                   winner:"" },
-      { r:10, date:"2026-07-14", name:"Aurillac → Le Lioran",               venue:"Mountain · 167 km",                winner:"" },
-      { r:11, date:"2026-07-15", name:"Vichy → Nevers",                     venue:"Flat · 161 km",                    winner:"" },
-      { r:12, date:"2026-07-16", name:"Magny-Cours → Chalon-sur-Saône",     venue:"Flat · 181 km",                    winner:"" },
-      { r:13, date:"2026-07-17", name:"Dole → Belfort",                     venue:"Hilly · 205 km",                   winner:"" },
-      { r:14, date:"2026-07-18", name:"Mulhouse → Le Markstein Fellering",  venue:"Mountain · 155 km",                winner:"" },
-      { r:15, date:"2026-07-19", name:"Champagnole → Plateau de Solaison",  venue:"Mountain summit finish · 184 km",  winner:"" },
-      { r:16, date:"2026-07-21", name:"Évian-les-Bains → Thonon-les-Bains", venue:"Individual time trial · 26 km",    winner:"" },
-      { r:17, date:"2026-07-22", name:"Chambéry → Voiron",                  venue:"Flat · 175 km",                    winner:"" },
-      { r:18, date:"2026-07-23", name:"Voiron → Orcières-Merlette",         venue:"Mountain summit finish · 185 km",  winner:"" },
-      { r:19, date:"2026-07-24", name:"Gap → Alpe d'Huez",                  venue:"Mountain summit finish · 128 km",  winner:"" },
-      { r:20, date:"2026-07-25", name:"Le Bourg-d'Oisans → Alpe d'Huez",    venue:"Mountain summit finish · 171 km",  winner:"" },
-      { r:21, date:"2026-07-26", name:"Thoiry → Paris (Champs-Élysées)",    venue:"Flat · 130 km",                    winner:"" }
-    ]
+  {
+    unit: "32B",
+    trading: "CrossFit Plett",
+    legal: "Just Physical Health (Pty) Ltd — Reg 2013/194898/07",
+    contact: "Donald Ravenscroft",
+    email: "donald@crossfitplett.com",
+    phone: "076 612 5335",
+    start: "2025-10-01",
+    end: "2027-09-30",
+    base: 29790,
+    rate: 0.06,
+    model: "annual",
+    dueDay: "8th of month",
+    deposit: 29790,
+    renewalNotice: "3 months before expiry",
+    earlyTermNotice: "3 calendar months' written notice",
+    cancelPenalty: "3 months' rent if cancelled within first 6 months (before ~1 Apr 2026)",
+    notes: "Tenant's physical/postal address was left as the placeholder text “New Warehouse Address?” in the signed lease schedule — confirm actual current address. The Lessee's signing date was not clearly legible on the provided scan (Lessor signed 19 Sept 2025 at Plettenberg Bay). Donald Ravenscroft is also surety on this lease. Rent escalates 6% at each lease anniversary throughout the full 2-year initial term."
   }
-};
+];
 
-/* ===========================================================================
-   DATA OVERLAY — fetch same-origin data.json (kept current by the GitHub
-   Action). Falls back to the embedded SERIES data if absent.
-   =========================================================================== */
-async function loadDataOverlay(){
-  try{
-    const r = await fetch("./data.json", { cache:"no-store" });
-    if(!r.ok) return;
-    const d = await r.json();
-    if(d && d.series){
-      for(const k of Object.keys(d.series)){
-        if(SERIES[k] && Array.isArray(d.series[k].rounds))
-          SERIES[k].rounds = d.series[k].rounds;
-      }
-    }
-  }catch(e){ /* no data.json (e.g. local file) — use embedded data */ }
+const R = n => "R" + n.toLocaleString("en-ZA", {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtDate = d => d.toLocaleDateString("en-GB", {day:"2-digit", month:"short", year:"numeric"});
+
+function edate(date, months){
+  const d = new Date(date.getTime());
+  const targetMonth = d.getMonth() + months;
+  const targetYear = d.getFullYear() + Math.floor(targetMonth/12);
+  const normMonth = ((targetMonth % 12) + 12) % 12;
+  const daysInTarget = new Date(targetYear, normMonth+1, 0).getDate();
+  const day = Math.min(d.getDate(), daysInTarget);
+  return new Date(targetYear, normMonth, day);
 }
-
-/* ===========================================================================
-   LIVE F1 — schedule + winners from Jolpica/Ergast; silent fallback.
-   =========================================================================== */
-async function loadF1Live(){
-  const cfg = SERIES.f1.live;
-  try{
-    const [sRes, wRes] = await Promise.all([ fetch(cfg.races), fetch(cfg.winners) ]);
-    if(!sRes.ok || !wRes.ok) throw new Error("bad status");
-    const sched = (await sRes.json()).MRData.RaceTable.Races || [];
-    const wins  = (await wRes.json()).MRData.RaceTable.Races || [];
-    sched.forEach(r=>{ const rd = SERIES.f1.rounds.find(x=>x.r === +r.round); if(rd && r.date) rd.date = r.date; });
-    wins.forEach(r=>{
-      const w = r.Results && r.Results[0] && r.Results[0].Driver;
-      const rd = SERIES.f1.rounds.find(x=>x.r === +r.round);
-      if(rd && w) rd.winner = (w.givenName + " " + w.familyName).trim();
-    });
-    SERIES.f1.liveState = "live";
-  }catch(e){ SERIES.f1.liveState = "cached"; }
-  if(current === "f1") render("f1");
+function fullYearsBetween(start, end){
+  let years = end.getFullYear() - start.getFullYear();
+  const anniv = new Date(start.getFullYear()+years, start.getMonth(), start.getDate());
+  if (anniv > end) years -= 1;
+  return Math.max(years, 0);
 }
-
-/* ===========================================================================
-   RENDERING
-   =========================================================================== */
-const TODAY = new Date(); TODAY.setHours(0,0,0,0);
-const order = ["f1","motogp","sx","mx","he","tdf"];
-let current = "f1";
-
-const fmtDate = iso => new Date(iso+"T00:00:00").toLocaleDateString(undefined,{day:"numeric",month:"short"});
-const daysTo = iso => Math.round((new Date(iso+"T00:00:00") - TODAY)/86400000);
-const roundPrefix = s => s.unit === "Stage" ? "Stage " : "R";
-
-function cardHTML(key, rd, done){
-  const win = rd.winner && rd.winner.trim()
-    ? `<span class="win">🏆 ${rd.winner}</span>`
-    : (done ? `<span class="tag">tap for results</span>` : "");
-  const prov = rd.prov ? `<span class="prov">provisional</span>` : "";
-  const chev = done ? `<span class="chev">▸</span>` : "";
-  return `<div class="round" data-id="${key}-${rd.r}">
-      <div class="row ${done?'done':''} ${done?'clickable':''}" data-series="${key}" data-round="${rd.r}">
-        <div class="rd">${rd.r}</div>
-        <div class="info"><div class="n">${rd.name}${prov}</div><div class="v">${rd.venue}</div></div>
-        <div class="meta"><div class="d">${fmtDate(rd.date)}</div>${win}</div>
-        ${chev}
-      </div>
-      ${done ? `<div class="details" hidden></div>` : ""}
-    </div>`;
+function monthsBetween(start, end){
+  let months = (end.getFullYear()-start.getFullYear())*12 + (end.getMonth()-start.getMonth());
+  if (end.getDate() < start.getDate()) months -= 1;
+  return Math.max(months, 0);
 }
+function daysBetween(a, b){ return Math.round((b - a) / 86400000); }
 
-function resultsTable(list){
-  const rows = list.map((r,i)=>{
-    let pos, name, ex="";
-    if(typeof r === "string"){
-      const m = r.match(/^\s*(\d+)[.\)\s]+(.*)$/);
-      pos = m ? m[1] : (i+1); name = m ? m[2] : r;
-    } else { pos = r.pos ?? (i+1); name = r.name || ""; ex = r.ex || ""; }
-    return `<tr class="${+pos===1?'w1':''}"><td class="pos">${pos}</td><td>${name}</td><td class="ex">${ex}</td></tr>`;
-  }).join("");
-  return `<table class="res"><tbody>${rows}</tbody></table>`;
-}
+const TODAY = new Date();
+TODAY.setHours(0,0,0,0);
 
-async function f1FullResults(round){
-  const url = `https://api.jolpi.ca/ergast/f1/2026/${round}/results.json`;
-  const race = (await (await fetch(url)).json()).MRData.RaceTable.Races[0];
-  if(!race || !race.Results) return null;
-  return race.Results.map(x=>({
-    pos: x.position,
-    name: `${x.Driver.givenName} ${x.Driver.familyName}`,
-    ex:  x.Constructor.name + (x.Time ? " · " + x.Time.time : (x.status ? " · " + x.status : ""))
-  }));
-}
-
-async function populateDetails(key, rd, el){
-  if(Array.isArray(rd.results) && rd.results.length){ el.innerHTML = resultsTable(rd.results); return; }
-  if(rd._full){ el.innerHTML = resultsTable(rd._full); return; }
-  if(key === "f1"){
-    el.innerHTML = `<div class="dloading">Loading full results…</div>`;
-    try{
-      const full = await f1FullResults(rd.r);
-      if(full && full.length){ rd._full = full; el.innerHTML = resultsTable(full); }
-      else el.innerHTML = `<div class="dmsg">Results not published yet.</div>`;
-    }catch(e){
-      el.innerHTML = `<div class="dmsg">Couldn't load live results (offline?).${rd.winner?` Winner: <strong>${rd.winner}</strong>.`:""}</div>`;
-    }
-    return;
-  }
-  el.innerHTML = rd.winner
-    ? `<div class="dmsg"><strong>Winner:</strong> ${rd.winner}<br>Full classification appears here once a podium is recorded in the data.</div>`
-    : `<div class="dmsg">Full results not recorded yet — they'll appear here after the next update.</div>`;
-}
-
-function onViewClick(e){
-  const row = e.target.closest(".row.clickable");
-  if(!row) return;
-  const round = row.closest(".round");
-  const el = round.querySelector(".details");
-  if(!el) return;
-  if(el.hasAttribute("hidden")){
-    el.removeAttribute("hidden"); round.classList.add("open");
-    if(!el.dataset.loaded){
-      const key = row.dataset.series;
-      const rd = SERIES[key].rounds.find(x=>x.r === +row.dataset.round);
-      populateDetails(key, rd, el); el.dataset.loaded = "1";
-    }
-  } else {
-    el.setAttribute("hidden",""); round.classList.remove("open");
+function computeRent(t){
+  const start = new Date(t.start), end = new Date(t.end);
+  if (t.model === "annual"){
+    if (TODAY < start) return {rentLabel: "Not yet commenced", rentValue: null, nextDate: start, nextRent: t.base};
+    const cappedToday = TODAY < end ? TODAY : end;
+    const years = fullYearsBetween(start, cappedToday);
+    const rent = t.base * Math.pow(1+t.rate, years);
+    let nextDate = edate(start, (years+1)*12);
+    const noFurther = nextDate > end;
+    const nextRent = t.base * Math.pow(1+t.rate, years+1);
+    return {rentLabel: R(rent), rentValue: rent, nextDate: noFurther ? null : nextDate, nextRent, noFurther};
+  } else { // pickleball
+    const anchor = edate(start, 12);
+    if (TODAY < anchor) return {rentLabel: "Revenue share Yr 1 (50% of gross revenue)", rentValue: null, nextDate: anchor, nextRent: t.base};
+    const years = fullYearsBetween(anchor, TODAY);
+    const rent = t.base * Math.pow(1+t.rate, years);
+    const nextDate = edate(anchor, (years+1)*12);
+    const nextRent = t.base * Math.pow(1+t.rate, years+1);
+    return {rentLabel: R(rent), rentValue: rent, nextDate, nextRent};
   }
 }
 
-function liveBadge(s){
-  if(!s.live) return "";
-  if(s.liveState === "live")   return `<span class="live">LIVE</span>`;
-  if(s.liveState === "cached") return `<span class="live cached">cached</span>`;
-  return `<span class="live cached">loading…</span>`;
+function statusFor(days){
+  if (days < 0) return {cls:"status-grey", label:"Lease expired"};
+  if (days <= 90) return {cls:"status-red", label:"Renewal window — act now"};
+  if (days <= 180) return {cls:"status-yellow", label:"Renewal notice due soon"};
+  return {cls:"status-green", label:"Active"};
 }
 
-function render(key){
-  current = key;
-  const s = SERIES[key];
-  document.documentElement.style.setProperty("--accent", s.accent);
-  [...document.querySelectorAll(".tab")].forEach(t => t.classList.toggle("active", t.dataset.k === key));
+document.getElementById("asof").textContent = "Viewing as of " + fmtDate(TODAY);
 
-  const past = s.rounds.filter(r => daysTo(r.date) < 0);
-  const upcoming = s.rounds.filter(r => daysTo(r.date) >= 0);
-  const next = upcoming[0];
-
-  let html = "";
-  if(next){
-    const dd = daysTo(next.date);
-    html += `<div class="next">
-        <div><div class="lbl">Up next · ${s.label} ${liveBadge(s)}</div>
-          <div class="nm">${roundPrefix(s)}${next.r} — ${next.name}</div>
-          <div class="vn">${next.venue}</div></div>
-        <div class="count">
-          ${dd===0 ? `<div class="num" style="font-size:20px">TODAY</div>`
-                   : `<div class="num">${dd}</div><div class="unit">day${dd===1?'':'s'} to go</div>`}
-          <div class="when">${fmtDate(next.date)} 2026</div>
-        </div></div>`;
-  } else {
-    html += `<div class="next"><div><div class="lbl">${s.label} ${liveBadge(s)}</div>
-        <div class="nm">Season complete</div>
-        <div class="vn">All ${s.rounds.length} ${s.unit.toLowerCase()}s have run — see results below</div></div></div>`;
+// ---- KPIs ----
+let totalFixedRent = 0, actNow = 0, dueSoon = 0;
+const rentResults = TENANTS.map(t => {
+  const r = computeRent(t);
+  const end = new Date(t.end);
+  const days = daysBetween(TODAY, end);
+  const st = statusFor(days);
+  if (typeof r.rentValue === "number"){
+    totalFixedRent += r.rentValue;
   }
-
-  html += `<div class="sec-title">Upcoming ${s.unit}s</div>`;
-  html += upcoming.length
-    ? upcoming.map(r => cardHTML(key,r,false)).join("")
-    : `<div class="empty">No upcoming ${s.unit.toLowerCase()}s — the season has finished.</div>`;
-
-  html += `<div class="sec-title">Results &amp; completed ${s.unit}s <span style="font-weight:600;text-transform:none;letter-spacing:0;opacity:.7">· tap a row for full results</span></div>`;
-  html += past.length
-    ? past.slice().reverse().map(r => cardHTML(key,r,true)).join("")
-    : `<div class="empty">No ${s.unit.toLowerCase()}s completed yet this season.</div>`;
-
-  document.getElementById("view").innerHTML = html;
-}
-
-// Build tabs + wire up
-const tabsEl = document.getElementById("tabs");
-order.forEach(k=>{
-  const b = document.createElement("button");
-  b.className = "tab"; b.dataset.k = k; b.textContent = SERIES[k].tab;
-  b.onclick = ()=>render(k);
-  tabsEl.appendChild(b);
+  if (st.label.includes("act now")) actNow++;
+  if (st.label.includes("due soon")) dueSoon++;
+  return {t, r, days, st, end};
 });
-document.getElementById("view").addEventListener("click", onViewClick);
 
-// Startup: render fallback, overlay data.json, then live F1.
-(async () => {
-  render("f1");
-  await loadDataOverlay(); render(current);
-  loadF1Live();
-})();
+const kpis = [
+  {label:"Tenants", value: TENANTS.length},
+  {label:"Current fixed rent roll (ex VAT/mo)", value: R(totalFixedRent)},
+  {label:"Renewal action needed now", value: actNow, warn: actNow>0},
+  {label:"Renewal notice due soon", value: dueSoon, warn: dueSoon>0},
+];
+document.getElementById("kpis").innerHTML = kpis.map(k => `
+  <div class="kpi">
+    <div class="label">${k.label}</div>
+    <div class="value ${k.warn ? 'warn':''}">${k.value}</div>
+  </div>`).join("");
+
+// ---- Cards ----
+document.getElementById("cards").innerHTML = rentResults.map(({t,r,days,st,end}) => {
+  const start = new Date(t.start);
+  const term = monthsBetween(start, end);
+  const renewalDeadline = edate(end, -3);
+  const contactLines = [];
+  if (t.email) contactLines.push(`<a href="mailto:${t.email}">${t.email}</a>`);
+  if (t.email2) contactLines.push(`<a href="mailto:${t.email2}">${t.email2}</a>`);
+  if (t.phone) contactLines.push(t.phone);
+
+  return `
+  <div class="card">
+    <div class="card-head">
+      <div class="title-block">
+        <span class="unit-badge">UNIT ${t.unit}</span>
+        <h2>${t.trading}</h2>
+        <div class="legal">${t.legal}</div>
+      </div>
+      <div class="status-pill ${st.cls}">${st.label}</div>
+    </div>
+    <div class="card-body">
+      <div class="row"><span class="k">Contact</span><span class="v">${t.contact}</span></div>
+      ${contactLines.length ? `<div class="contact">${contactLines.join("<br>")}</div>` : ""}
+
+      <div class="row"><span class="k">Lease term</span><span class="v">${fmtDate(start)} → ${fmtDate(end)} (${term} mo)</span></div>
+      <div class="row"><span class="k">Days to expiry</span><span class="v">${days}</span></div>
+
+      <div class="rent-highlight">
+        <div class="k">Current monthly rent (ex VAT)</div>
+        <div class="v">${r.rentLabel}</div>
+      </div>
+      <div class="row"><span class="k">Next escalation</span><span class="v">${r.nextDate ? fmtDate(r.nextDate) + " → " + R(r.nextRent) : "No further increase (final year)"}</span></div>
+      <div class="row"><span class="k">Rent due</span><span class="v">${t.dueDay}</span></div>
+      <div class="row"><span class="k">Deposit (ex VAT)</span><span class="v">${t.deposit ? R(t.deposit) : "None specified"}</span></div>
+      <div class="row"><span class="k">Renewal notice</span><span class="v">${t.renewalNotice}</span></div>
+      <div class="row"><span class="k">Renewal deadline</span><span class="v">${t.renewalNotice.startsWith("3 months") ? fmtDate(renewalDeadline) : "N/A"}</span></div>
+      <div class="row"><span class="k">Early termination</span><span class="v">${t.earlyTermNotice}</span></div>
+      <div class="row"><span class="k">Cancellation penalty</span><span class="v">${t.cancelPenalty}</span></div>
+    </div>
+    <details>
+      <summary>Notes &amp; flags</summary>
+      <div class="flag-text">${t.notes}</div>
+    </details>
+  </div>`;
+}).join("");
 </script>
+
 </body>
 </html>
