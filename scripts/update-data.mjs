@@ -81,7 +81,10 @@ function winnersFromHTML(html){
     let hdr = null;
     for(const r of rows){ const c = cellsOf(r); if((r.match(/<th\b/gi)||[]).length >= 2){ hdr = c; break; } }
     if(!hdr) continue;
-    const winIdx = hdr.findIndex(h => /winn/i.test(h));   // "Winner" / "Winning rider" / "Winning driver"
+    // Prefer the OVERALL winner column (e.g. "Round Winner", "Winning rider")
+    // over per-heat columns like "Race 1 Winner"; fall back to any "…Winner".
+    let winIdx = hdr.findIndex(h => /round winner|overall winner|winning rider|winning driver/i.test(h));
+    if(winIdx < 0) winIdx = hdr.findIndex(h => /winn/i.test(h));
     if(winIdx < 0) continue;
     const map = {};
     for(const r of rows){
@@ -96,15 +99,48 @@ function winnersFromHTML(html){
   }
   return best;
 }
+// Championship standings: find the points table (header has "Points"/"Pts"),
+// return the top finishers as [{pos, name, pts}]. Returns null if not found.
+function standingsFromHTML(html){
+  const tables = html.match(/<table[^>]*wikitable[\s\S]*?<\/table>/gi) || [];
+  for(const t of tables){
+    const rows = t.match(/<tr[\s\S]*?<\/tr>/gi) || [];
+    let hdr = null, hdrRow = -1;
+    for(let i=0;i<rows.length;i++){
+      if((rows[i].match(/<th\b/gi)||[]).length >= 3){ hdr = cellsOf(rows[i]); hdrRow = i; break; }
+    }
+    if(!hdr) continue;
+    const ptsIdx = hdr.findIndex(h => /^(points|pts)\.?$/i.test((h||"").trim()));
+    if(ptsIdx < 0) continue;
+    let posIdx = hdr.findIndex(h => /^(pos|pos\.|rank|place)\.?$/i.test((h||"").trim()));
+    if(posIdx < 0) posIdx = 0;
+    const out = [];
+    for(let i=hdrRow+1;i<rows.length;i++){
+      const c = cellsOf(rows[i]);
+      if(c.length <= ptsIdx) continue;
+      const pos = parseInt(c[posIdx], 10);
+      if(!Number.isFinite(pos)) continue;
+      const name = (c[posIdx+1] || "").replace(/\s*\(.*?\)\s*$/,"").trim();
+      const pts  = (c[ptsIdx] || "").replace(/[^\d]/g,"");
+      if(name) out.push({ pos, name, pts });
+      if(out.length >= 12) break;
+    }
+    if(out.length >= 3) return out;
+  }
+  return null;
+}
 async function updateFromWikipedia(key, title){
+  const html = await pageHTML(title);
   const rounds = data.series[key].rounds;
-  const map = winnersFromHTML(await pageHTML(title));
+  const map = winnersFromHTML(html);
   let n = 0;
   for(const [round, name] of Object.entries(map)){
     const rd = rounds.find(x => x.r === +round);
     if(rd && name && rd.winner !== name){ rd.winner = name; n++; }
   }
-  console.log(`${key}: ${Object.keys(map).length} winner(s) found on Wikipedia, ${n} updated`);
+  const standings = standingsFromHTML(html);
+  if(standings && standings.length) data.series[key].standings = standings;
+  console.log(`${key}: ${Object.keys(map).length} winner(s), ${n} updated; standings ${standings ? standings.length : 0}`);
 }
 
 // Safety net: never let a stray rejection kill the whole run.
@@ -118,7 +154,7 @@ const jobs = [
   ["f1",     () => updateF1()],
   ["motogp", () => updateFromWikipedia("motogp", "2026 MotoGP World Championship")],
   ["sx",     () => updateFromWikipedia("sx",     "2026 AMA Supercross Championship")],
-  ["mx",     () => updateFromWikipedia("mx",     "2026 AMA Pro Motocross Championship")],
+  ["mx",     () => updateFromWikipedia("mx",     "2026 AMA National Motocross Championship")],
   ["he",     () => updateFromWikipedia("he",     "2026 FIM Hard Enduro World Championship")],
   ["tdf",    () => updateFromWikipedia("tdf",    "2026 Tour de France")],
 ];
