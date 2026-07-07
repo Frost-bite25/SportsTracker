@@ -122,9 +122,11 @@
   .dmsg{color:var(--muted);font-size:13px;line-height:1.55;padding:2px 0}
   .dmsg strong{color:var(--txt)}
   .dloading{color:var(--muted);font-size:13px;padding:2px 0}
-  .reslink{display:inline-block;margin-top:9px;font-size:12.5px;font-weight:700;
-    color:var(--accent);text-decoration:none}
-  .reslink:hover{text-decoration:underline}
+  .sub-h{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);
+    font-weight:800;margin:12px 0 6px}
+  .stage{margin-bottom:8px}
+  .stage-route{font-size:13px;font-weight:700;margin-bottom:8px}
+  .stage-map{width:100%;height:230px;border:0;border-radius:8px;background:var(--panel)}
   .rd{
     flex:0 0 42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;
     font-weight:800;font-size:15px;background:color-mix(in srgb,var(--accent) 18%,var(--panel2));
@@ -404,40 +406,86 @@ async function f1FullResults(round){
   }));
 }
 
-// Where to send "View full results" for each series (full classification /
-// standings live here — season pages only publish the round winner).
-const RESULT_URLS = {
-  f1:     "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
-  motogp: "https://en.wikipedia.org/wiki/2026_MotoGP_World_Championship",
-  sx:     "https://en.wikipedia.org/wiki/2026_AMA_Supercross_Championship",
-  mx:     "https://en.wikipedia.org/wiki/2026_AMA_Pro_Motocross_Championship",
-  he:     "https://fim-hardenduro.com/",
-  tdf:    "https://en.wikipedia.org/wiki/2026_Tour_de_France"
-};
-function resultsLink(key){
-  return RESULT_URLS[key]
-    ? `<a class="reslink" href="${RESULT_URLS[key]}" target="_blank" rel="noopener">View full results ↗</a>` : "";
+/* Championship standings (scraped into data.json by the Action). */
+function standingsBlock(s){
+  if(!Array.isArray(s.standings) || !s.standings.length) return "";
+  const rows = s.standings.map(r =>
+    `<tr class="${+r.pos===1?'w1':''}"><td class="pos">${r.pos}</td><td>${r.name}</td><td class="ex">${r.pts ? r.pts+' pts' : ''}</td></tr>`).join("");
+  return `<div class="sub-h">Championship standings</div><table class="res"><tbody>${rows}</tbody></table>`;
+}
+
+/* MotoGP full race classification — best effort via the motogp.com feed.
+   Returns rows or null (blocked/not found → caller falls back to standings). */
+async function motogpFullResults(round){
+  const B = "https://api.motogp.pulselive.com/motogp/v1/results";
+  const j = u => fetch(u).then(r => r.ok ? r.json() : Promise.reject(r.status));
+  const seasons = await j(`${B}/seasons`);
+  const season = seasons.find(s => s.year === 2026); if(!season) return null;
+  const events = await j(`${B}/events?seasonUuid=${season.id}&isFinished=true`);
+  const ev = events.find(e => (e.sequence ?? e.number) === round); if(!ev) return null;
+  const cats = await j(`${B}/categories?eventUuid=${ev.id}`);
+  const cat = cats.find(c => /motogp/i.test(c.name || "")); if(!cat) return null;
+  const sess = await j(`${B}/sessions?eventUuid=${ev.id}&categoryUuid=${cat.id}`);
+  const rac = sess.find(x => (x.type || "").toUpperCase() === "RAC"); if(!rac) return null;
+  const cls = await j(`${B}/session/${rac.id}/classification?test=false`);
+  const rows = (cls.classification || []).slice(0,15).map(x => ({
+    pos: x.position,
+    name: (x.rider && (x.rider.full_name || `${x.rider.name||""} ${x.rider.surname||""}`.trim())) || "",
+    ex: (x.team && x.team.name ? x.team.name : "") + (x.time ? " · " + x.time : (x.gap && x.gap.first ? " · +"+x.gap.first : ""))
+  })).filter(r => r.name);
+  return rows.length ? rows : null;
+}
+
+/* Tour de France stage panel: the day's route map (embedded), plus a best-
+   effort attempt to load the official profile image above it. */
+function tdfStagePanel(rd){
+  const towns  = rd.name.replace(/\([^)]*\)/g,"").split("→").map(t => t.trim()).filter(Boolean);
+  const start  = towns[0] || "", finish = towns[1] || "";
+  const mapSrc = finish
+    ? `https://maps.google.com/maps?saddr=${encodeURIComponent(start)}&daddr=${encodeURIComponent(finish)}&z=8&output=embed`
+    : `https://maps.google.com/maps?q=${encodeURIComponent(start)}&z=9&output=embed`;
+  const route  = finish ? `${start} → ${finish}` : start;
+  return `<div class="stage">
+      <div class="stage-route">Stage ${rd.r}: ${route} · ${rd.venue}</div>
+      <iframe class="stage-map" loading="lazy" src="${mapSrc}" title="Stage route map" allowfullscreen></iframe>
+    </div>`;
 }
 
 async function populateDetails(key, rd, el){
-  const link = resultsLink(key);
-  if(Array.isArray(rd.results) && rd.results.length){ el.innerHTML = resultsTable(rd.results) + link; return; }
-  if(rd._full){ el.innerHTML = resultsTable(rd._full); return; }
+  const s = SERIES[key];
+
+  // F1 — full live classification.
   if(key === "f1"){
+    if(rd._full){ el.innerHTML = resultsTable(rd._full); return; }
     el.innerHTML = `<div class="dloading">Loading full results…</div>`;
     try{
       const full = await f1FullResults(rd.r);
       if(full && full.length){ rd._full = full; el.innerHTML = resultsTable(full); }
-      else el.innerHTML = `<div class="dmsg">Results not published yet.</div>` + link;
+      else el.innerHTML = `<div class="dmsg">Results not published yet.</div>`;
     }catch(e){
-      el.innerHTML = `<div class="dmsg">Couldn't load live results (offline?).${rd.winner?` Winner: <strong>${rd.winner}</strong>.`:""}</div>` + link;
+      el.innerHTML = `<div class="dmsg">Couldn't load live results (offline?).${rd.winner?` Winner: <strong>${rd.winner}</strong>.`:""}</div>`;
     }
     return;
   }
-  // Non-F1: show the winner we have + a link to the full field/standings.
-  el.innerHTML = (rd.winner
+
+  // MotoGP — try the full race classification, else winner + standings.
+  if(key === "motogp"){
+    if(rd._full){ el.innerHTML = resultsTable(rd._full) + standingsBlock(s); return; }
+    el.innerHTML = `<div class="dloading">Loading race results…</div>`;
+    try{
+      const full = await motogpFullResults(rd.r);
+      if(full && full.length){ rd._full = full; el.innerHTML = resultsTable(full) + standingsBlock(s); return; }
+    }catch(e){ /* feed blocked — fall through */ }
+  }
+
+  // Everyone else (and MotoGP fallback): [TdF map] + winner + standings.
+  let html = "";
+  if(key === "tdf") html += tdfStagePanel(rd);
+  html += rd.winner
     ? `<div class="dmsg"><strong>🏆 Winner:</strong> ${rd.winner}</div>`
-    : `<div class="dmsg">Winner not posted yet — check back after the event.</div>`) + link;
+    : `<div class="dmsg">Winner not posted yet — check back after the event.</div>`;
+  html += standingsBlock(s);
+  el.innerHTML = html;
 }
 
 function onViewClick(e){
