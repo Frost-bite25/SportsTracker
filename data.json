@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T14:23:42.050Z",
+  "updated": "2026-07-07T19:50:03.748Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -930,53 +930,53 @@
       "standings": [
         {
           "pos": 1,
+          "name": "&#160; Mads Pedersen &#160;",
+          "pts": "103"
+        },
+        {
+          "pos": 2,
           "name": "&#160; Tadej Pogačar &#160;",
           "pts": "55"
         },
         {
-          "pos": 2,
+          "pos": 3,
           "name": "&#160; Jonas Vingegaard &#160;",
           "pts": "44"
         },
         {
-          "pos": 3,
+          "pos": 4,
+          "name": "&#160; Quinn Simmons &#160;",
+          "pts": "42"
+        },
+        {
+          "pos": 5,
           "name": "&#160; Isaac del Toro &#160;",
           "pts": "39"
         },
         {
-          "pos": 4,
-          "name": "&#160; Mads Pedersen &#160;",
-          "pts": "37"
+          "pos": 6,
+          "name": "&#160; Biniam Girmay &#160;",
+          "pts": "39"
         },
         {
-          "pos": 5,
+          "pos": 7,
           "name": "&#160; Remco Evenepoel &#160;",
           "pts": "33"
         },
         {
-          "pos": 6,
+          "pos": 8,
           "name": "&#160; Tobias Halland Johannessen &#160;",
           "pts": "32"
         },
         {
-          "pos": 7,
-          "name": "&#160; Paul Seixas &#160;",
-          "pts": "28"
-        },
-        {
-          "pos": 8,
-          "name": "&#160; Alex Molenaar &#160;",
-          "pts": "25"
-        },
-        {
           "pos": 9,
-          "name": "&#160; Richard Carapaz &#160;",
-          "pts": "25"
+          "name": "&#160; Jasper Philipsen &#160;",
+          "pts": "30"
         },
         {
           "pos": 10,
-          "name": "&#160; Mattias Skjelmose &#160;",
-          "pts": "23"
+          "name": "&#160; Paul Seixas &#160;",
+          "pts": "28"
         }
       ]
     }
