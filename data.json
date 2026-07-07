@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T09:35:11.606Z",
+  "updated": "2026-07-07T10:10:34.472Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -316,6 +316,68 @@
           "venue": "Circuit Ricardo Tormo",
           "winner": ""
         }
+      ],
+      "standings": [
+        {
+          "pos": 1,
+          "name": "Jorge Martín",
+          "pts": "193"
+        },
+        {
+          "pos": 2,
+          "name": "Marco Bezzecchi",
+          "pts": "186"
+        },
+        {
+          "pos": 3,
+          "name": "Fabio Di Giannantonio",
+          "pts": "177"
+        },
+        {
+          "pos": 4,
+          "name": "Ai Ogura",
+          "pts": "168"
+        },
+        {
+          "pos": 5,
+          "name": "Marc Márquez",
+          "pts": "153"
+        },
+        {
+          "pos": 6,
+          "name": "Raúl Fernández",
+          "pts": "138"
+        },
+        {
+          "pos": 7,
+          "name": "Pedro Acosta",
+          "pts": "133"
+        },
+        {
+          "pos": 8,
+          "name": "Francesco Bagnaia",
+          "pts": "130"
+        },
+        {
+          "pos": 9,
+          "name": "Álex Márquez",
+          "pts": "78"
+        },
+        {
+          "pos": 10,
+          "name": "Fermín Aldeguer",
+          "pts": "76"
+        },
+        {
+          "pos": 11,
+          "name": "Luca Marini",
+          "pts": "71"
+        },
+        {
+          "pos": 12,
+          "name": "Enea Bastianini",
+          "pts": "69"
+        }
       ]
     },
     "sx": {
@@ -439,6 +501,68 @@
           "venue": "Rice-Eccles Stadium, UT · Final · Showdown",
           "winner": "Chase Sexton"
         }
+      ],
+      "standings": [
+        {
+          "pos": 1,
+          "name": "Ken Roczen",
+          "pts": "349"
+        },
+        {
+          "pos": 2,
+          "name": "Hunter Lawrence",
+          "pts": "346"
+        },
+        {
+          "pos": 3,
+          "name": "Cooper Webb",
+          "pts": "315"
+        },
+        {
+          "pos": 4,
+          "name": "Eli Tomac",
+          "pts": "275"
+        },
+        {
+          "pos": 5,
+          "name": "Justin Cooper",
+          "pts": "273"
+        },
+        {
+          "pos": 6,
+          "name": "Chase Sexton",
+          "pts": "237"
+        },
+        {
+          "pos": 7,
+          "name": "Malcolm Stewart",
+          "pts": "204"
+        },
+        {
+          "pos": 8,
+          "name": "Joey Savatgy",
+          "pts": "194"
+        },
+        {
+          "pos": 9,
+          "name": "Jorge Prado",
+          "pts": "189"
+        },
+        {
+          "pos": 10,
+          "name": "Justin Hill",
+          "pts": "188"
+        },
+        {
+          "pos": 11,
+          "name": "Dylan Ferrandis",
+          "pts": "176"
+        },
+        {
+          "pos": 12,
+          "name": "Christian Craig",
+          "pts": "154"
+        }
       ]
     },
     "mx": {
@@ -448,35 +572,35 @@
           "date": "2026-05-30",
           "name": "Fox Raceway National",
           "venue": "Fox Raceway, Pala, CA",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 2,
           "date": "2026-06-06",
           "name": "Hangtown Classic",
           "venue": "Prairie City OHV, Rancho Cordova, CA",
-          "winner": ""
+          "winner": "Jett Lawrence"
         },
         {
           "r": 3,
           "date": "2026-06-13",
           "name": "Thunder Valley National",
           "venue": "Thunder Valley MX, Lakewood, CO",
-          "winner": ""
+          "winner": "Jett Lawrence"
         },
         {
           "r": 4,
           "date": "2026-06-20",
           "name": "High Point National",
           "venue": "High Point Raceway, Mt Morris, PA",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 5,
           "date": "2026-07-04",
           "name": "RedBud National",
           "venue": "RedBud MX, Buchanan, MI",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 6,
@@ -519,6 +643,68 @@
           "name": "Ironman National",
           "venue": "Ironman Raceway, Crawfordsville, IN",
           "winner": ""
+        }
+      ],
+      "standings": [
+        {
+          "pos": 1,
+          "name": "Hunter Lawrence",
+          "pts": ""
+        },
+        {
+          "pos": 2,
+          "name": "Jett Lawrence",
+          "pts": ""
+        },
+        {
+          "pos": 3,
+          "name": "Haiden Deegan",
+          "pts": ""
+        },
+        {
+          "pos": 4,
+          "name": "Jorge Prado",
+          "pts": ""
+        },
+        {
+          "pos": 5,
+          "name": "RJ Hampshire",
+          "pts": ""
+        },
+        {
+          "pos": 6,
+          "name": "Garrett Marchbanks",
+          "pts": ""
+        },
+        {
+          "pos": 7,
+          "name": "Dylan Ferrandis",
+          "pts": ""
+        },
+        {
+          "pos": 8,
+          "name": "Mikkel Haarup",
+          "pts": ""
+        },
+        {
+          "pos": 9,
+          "name": "Cooper Webb",
+          "pts": ""
+        },
+        {
+          "pos": 10,
+          "name": "Aaron Plessinger",
+          "pts": ""
+        },
+        {
+          "pos": 11,
+          "name": "Jordon Smith",
+          "pts": ""
+        },
+        {
+          "pos": 12,
+          "name": "Christian Craig",
+          "pts": ""
         }
       ]
     },
@@ -739,6 +925,58 @@
           "name": "Thoiry → Paris (Champs-Élysées)",
           "venue": "Flat · 130 km",
           "winner": "Flat stage"
+        }
+      ],
+      "standings": [
+        {
+          "pos": 1,
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "55"
+        },
+        {
+          "pos": 2,
+          "name": "&#160; Jonas Vingegaard &#160;",
+          "pts": "44"
+        },
+        {
+          "pos": 3,
+          "name": "&#160; Isaac del Toro &#160;",
+          "pts": "39"
+        },
+        {
+          "pos": 4,
+          "name": "&#160; Mads Pedersen &#160;",
+          "pts": "37"
+        },
+        {
+          "pos": 5,
+          "name": "&#160; Remco Evenepoel &#160;",
+          "pts": "33"
+        },
+        {
+          "pos": 6,
+          "name": "&#160; Tobias Halland Johannessen &#160;",
+          "pts": "32"
+        },
+        {
+          "pos": 7,
+          "name": "&#160; Paul Seixas &#160;",
+          "pts": "28"
+        },
+        {
+          "pos": 8,
+          "name": "&#160; Alex Molenaar &#160;",
+          "pts": "25"
+        },
+        {
+          "pos": 9,
+          "name": "&#160; Richard Carapaz &#160;",
+          "pts": "25"
+        },
+        {
+          "pos": 10,
+          "name": "&#160; Mattias Skjelmose &#160;",
+          "pts": "23"
         }
       ]
     }
