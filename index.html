@@ -126,7 +126,8 @@
     font-weight:800;margin:12px 0 6px}
   .stage{margin-bottom:8px}
   .stage-route{font-size:13px;font-weight:700;margin-bottom:8px}
-  .stage-map{width:100%;height:230px;border:0;border-radius:8px;background:var(--panel)}
+  .stage-profile{width:100%;height:auto;border-radius:8px;background:#fff;display:block}
+  .stage-missing{color:var(--muted);font-size:13px;padding:6px 0}
   .rd{
     flex:0 0 42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;
     font-weight:800;font-size:15px;background:color-mix(in srgb,var(--accent) 18%,var(--panel2));
@@ -367,19 +368,19 @@ const daysTo = iso => Math.round((new Date(iso+"T00:00:00") - TODAY)/86400000);
 const roundPrefix = s => s.unit === "Stage" ? "Stage " : "R";
 
 function cardHTML(key, rd, done){
+  const tapLabel = key === "tdf" ? "tap for stage profile" : (done ? "tap for results" : "tap for details");
   const win = rd.winner && rd.winner.trim()
     ? `<span class="win">🏆 ${rd.winner}</span>`
-    : (done ? `<span class="tag">tap for results</span>` : "");
+    : `<span class="tag">${tapLabel}</span>`;
   const prov = rd.prov ? `<span class="prov">provisional</span>` : "";
-  const chev = done ? `<span class="chev">▸</span>` : "";
   return `<div class="round" data-id="${key}-${rd.r}">
-      <div class="row ${done?'done':''} ${done?'clickable':''}" data-series="${key}" data-round="${rd.r}">
+      <div class="row ${done?'done':''} clickable" data-series="${key}" data-round="${rd.r}">
         <div class="rd">${rd.r}</div>
         <div class="info"><div class="n">${rd.name}${prov}</div><div class="v">${rd.venue}</div></div>
         <div class="meta"><div class="d">${fmtDate(rd.date)}</div>${win}</div>
-        ${chev}
+        <span class="chev">▸</span>
       </div>
-      ${done ? `<div class="details" hidden></div>` : ""}
+      <div class="details" hidden></div>
     </div>`;
 }
 
@@ -436,18 +437,18 @@ async function motogpFullResults(round){
   return rows.length ? rows : null;
 }
 
-/* Tour de France stage panel: the day's route map (embedded), plus a best-
-   effort attempt to load the official profile image above it. */
+/* Tour de France: the day's official elevation profile. The image URL is
+   predictable per stage number, so this works for every stage (past & future).
+   If a stage image is missing, it hides itself and shows a short note. */
 function tdfStagePanel(rd){
-  const towns  = rd.name.replace(/\([^)]*\)/g,"").split("→").map(t => t.trim()).filter(Boolean);
-  const start  = towns[0] || "", finish = towns[1] || "";
-  const mapSrc = finish
-    ? `https://maps.google.com/maps?saddr=${encodeURIComponent(start)}&daddr=${encodeURIComponent(finish)}&z=8&output=embed`
-    : `https://maps.google.com/maps?q=${encodeURIComponent(start)}&z=9&output=embed`;
-  const route  = finish ? `${start} → ${finish}` : start;
+  const src = `https://cdn.cyclingstage.com/images/tour-de-france/2026/stage-${rd.r}-profile.jpg`;
   return `<div class="stage">
-      <div class="stage-route">Stage ${rd.r}: ${route} · ${rd.venue}</div>
-      <iframe class="stage-map" loading="lazy" src="${mapSrc}" title="Stage route map" allowfullscreen></iframe>
+      <div class="stage-route">Stage ${rd.r}: ${rd.name} · ${rd.venue}</div>
+      <a href="${src}" target="_blank" rel="noopener">
+        <img class="stage-profile" src="${src}" alt="Stage ${rd.r} elevation profile"
+             onerror="this.style.display='none';this.parentNode.nextElementSibling.style.display='block';">
+      </a>
+      <div class="stage-missing" style="display:none">Stage profile not available yet.</div>
     </div>`;
 }
 
@@ -478,10 +479,15 @@ async function populateDetails(key, rd, el){
     }catch(e){ /* feed blocked — fall through */ }
   }
 
-  // Everyone else (and MotoGP fallback): [TdF map] + winner + standings.
-  let html = "";
-  if(key === "tdf") html += tdfStagePanel(rd);
-  html += rd.winner
+  // Tour de France — the day's elevation profile (+ stage winner if run).
+  if(key === "tdf"){
+    let h = tdfStagePanel(rd);
+    if(rd.winner) h += `<div class="dmsg"><strong>🏆 Stage winner:</strong> ${rd.winner}</div>`;
+    el.innerHTML = h; return;
+  }
+
+  // Everyone else (and MotoGP fallback): winner + standings.
+  let html = rd.winner
     ? `<div class="dmsg"><strong>🏆 Winner:</strong> ${rd.winner}</div>`
     : `<div class="dmsg">Winner not posted yet — check back after the event.</div>`;
   html += standingsBlock(s);
