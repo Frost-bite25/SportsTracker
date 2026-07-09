@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T14:49:59.272Z",
+  "updated": "2026-07-09T19:39:35.942Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,52 +931,52 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "143"
+          "pts": "168"
         },
         {
           "pos": 2,
-          "name": "&#160; Biniam Girmay &#160;",
-          "pts": "79"
+          "name": "&#160; Max Kanter &#160;",
+          "pts": "93"
         },
         {
           "pos": 3,
-          "name": "&#160; Max Kanter &#160;",
-          "pts": "77"
+          "name": "&#160; Biniam Girmay &#160;",
+          "pts": "91"
         },
         {
           "pos": 4,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "72"
+          "pts": "86"
         },
         {
           "pos": 5,
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "75"
+        },
+        {
+          "pos": 6,
           "name": "&#160; Olav Kooij &#160;",
           "pts": "70"
         },
         {
-          "pos": 6,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "55"
+          "pos": 7,
+          "name": "&#160; Jonas Vingegaard &#160;",
+          "pts": "61"
         },
         {
-          "pos": 7,
+          "pos": 8,
           "name": "&#160; Tim Merlier &#160;",
           "pts": "55"
         },
         {
-          "pos": 8,
-          "name": "&#160; Quinn Simmons &#160;",
-          "pts": "45"
-        },
-        {
           "pos": 9,
-          "name": "&#160; Jonas Vingegaard &#160;",
-          "pts": "44"
+          "name": "&#160; Isaac del Toro &#160;",
+          "pts": "54"
         },
         {
           "pos": 10,
-          "name": "&#160; Isaac del Toro &#160;",
-          "pts": "39"
+          "name": "&#160; Quinn Simmons &#160;",
+          "pts": "53"
         }
       ]
     }
