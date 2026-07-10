@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T14:14:07.875Z",
+  "updated": "2026-07-10T19:22:24.591Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,52 +931,52 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "168"
+          "pts": "204"
         },
         {
           "pos": 2,
-          "name": "&#160; Max Kanter &#160;",
-          "pts": "93"
+          "name": "&#160; Biniam Girmay &#160;",
+          "pts": "145"
         },
         {
           "pos": 3,
-          "name": "&#160; Biniam Girmay &#160;",
-          "pts": "91"
+          "name": "&#160; Max Kanter &#160;",
+          "pts": "140"
         },
         {
           "pos": 4,
-          "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "86"
+          "name": "&#160; Tim Merlier &#160;",
+          "pts": "134"
         },
         {
           "pos": 5,
+          "name": "&#160; Jasper Philipsen &#160;",
+          "pts": "126"
+        },
+        {
+          "pos": 6,
           "name": "&#160; Tadej Pogačar &#160;",
           "pts": "75"
         },
         {
-          "pos": 6,
+          "pos": 7,
+          "name": "&#160; Søren Wærenskjold &#160;",
+          "pts": "73"
+        },
+        {
+          "pos": 8,
           "name": "&#160; Olav Kooij &#160;",
           "pts": "70"
         },
         {
-          "pos": 7,
-          "name": "&#160; Jonas Vingegaard &#160;",
-          "pts": "61"
-        },
-        {
-          "pos": 8,
-          "name": "&#160; Tim Merlier &#160;",
-          "pts": "55"
-        },
-        {
           "pos": 9,
-          "name": "&#160; Isaac del Toro &#160;",
-          "pts": "54"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "64"
         },
         {
           "pos": 10,
-          "name": "&#160; Quinn Simmons &#160;",
-          "pts": "53"
+          "name": "&#160; Jonas Vingegaard &#160;",
+          "pts": "61"
         }
       ]
     }
