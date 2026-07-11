@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T13:10:04.431Z",
+  "updated": "2026-07-11T18:56:36.577Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -321,7 +321,7 @@
         {
           "pos": 1,
           "name": "Jorge Martín",
-          "pts": "193"
+          "pts": "197"
         },
         {
           "pos": 2,
@@ -331,37 +331,37 @@
         {
           "pos": 3,
           "name": "Fabio Di Giannantonio",
-          "pts": "177"
+          "pts": "184"
         },
         {
           "pos": 4,
           "name": "Ai Ogura",
-          "pts": "168"
+          "pts": "174"
         },
         {
           "pos": 5,
           "name": "Marc Márquez",
-          "pts": "153"
+          "pts": "165"
         },
         {
           "pos": 6,
           "name": "Raúl Fernández",
-          "pts": "138"
+          "pts": "143"
         },
         {
           "pos": 7,
           "name": "Pedro Acosta",
-          "pts": "133"
+          "pts": "135"
         },
         {
           "pos": 8,
           "name": "Francesco Bagnaia",
-          "pts": "130"
+          "pts": "133"
         },
         {
           "pos": 9,
           "name": "Álex Márquez",
-          "pts": "78"
+          "pts": "87"
         },
         {
           "pos": 10,
@@ -931,47 +931,47 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "204"
+          "pts": "228"
         },
         {
           "pos": 2,
-          "name": "&#160; Biniam Girmay &#160;",
-          "pts": "145"
+          "name": "&#160; Tim Merlier &#160;",
+          "pts": "213"
         },
         {
           "pos": 3,
-          "name": "&#160; Max Kanter &#160;",
-          "pts": "140"
+          "name": "&#160; Biniam Girmay &#160;",
+          "pts": "203"
         },
         {
           "pos": 4,
-          "name": "&#160; Tim Merlier &#160;",
-          "pts": "134"
+          "name": "&#160; Jasper Philipsen &#160;",
+          "pts": "175"
         },
         {
           "pos": 5,
-          "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "126"
+          "name": "&#160; Max Kanter &#160;",
+          "pts": "172"
         },
         {
           "pos": 6,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "75"
+          "name": "&#160; Olav Kooij &#160;",
+          "pts": "110"
         },
         {
           "pos": 7,
           "name": "&#160; Søren Wærenskjold &#160;",
-          "pts": "73"
+          "pts": "89"
         },
         {
           "pos": 8,
-          "name": "&#160; Olav Kooij &#160;",
-          "pts": "70"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "79"
         },
         {
           "pos": 9,
-          "name": "&#160; Anthony Turgis &#160;",
-          "pts": "64"
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "75"
         },
         {
           "pos": 10,
