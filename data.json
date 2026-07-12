@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T08:10:42.697Z",
+  "updated": "2026-07-12T13:11:53.332Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -237,7 +237,7 @@
           "date": "2026-06-28",
           "name": "Dutch TT",
           "venue": "TT Circuit Assen",
-          "winner": ""
+          "winner": "Marc Márquez"
         },
         {
           "r": 12,
@@ -321,42 +321,42 @@
         {
           "pos": 1,
           "name": "Jorge Martín",
-          "pts": "197"
+          "pts": "208"
         },
         {
           "pos": 2,
+          "name": "Ai Ogura",
+          "pts": "194"
+        },
+        {
+          "pos": 3,
+          "name": "Marc Márquez",
+          "pts": "190"
+        },
+        {
+          "pos": 4,
           "name": "Marco Bezzecchi",
           "pts": "186"
         },
         {
-          "pos": 3,
+          "pos": 5,
           "name": "Fabio Di Giannantonio",
           "pts": "184"
         },
         {
-          "pos": 4,
-          "name": "Ai Ogura",
-          "pts": "174"
-        },
-        {
-          "pos": 5,
-          "name": "Marc Márquez",
-          "pts": "165"
-        },
-        {
           "pos": 6,
           "name": "Raúl Fernández",
-          "pts": "143"
+          "pts": "159"
         },
         {
           "pos": 7,
           "name": "Pedro Acosta",
-          "pts": "135"
+          "pts": "147"
         },
         {
           "pos": 8,
           "name": "Francesco Bagnaia",
-          "pts": "133"
+          "pts": "143"
         },
         {
           "pos": 9,
@@ -365,18 +365,18 @@
         },
         {
           "pos": 10,
+          "name": "Luca Marini",
+          "pts": "79"
+        },
+        {
+          "pos": 11,
           "name": "Fermín Aldeguer",
           "pts": "76"
         },
         {
-          "pos": 11,
-          "name": "Luca Marini",
-          "pts": "71"
-        },
-        {
           "pos": 12,
           "name": "Enea Bastianini",
-          "pts": "69"
+          "pts": "76"
         }
       ]
     },
