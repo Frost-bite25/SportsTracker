@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T13:11:53.332Z",
+  "updated": "2026-07-12T19:00:08.290Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -351,7 +351,7 @@
         {
           "pos": 7,
           "name": "Pedro Acosta",
-          "pts": "147"
+          "pts": "148"
         },
         {
           "pos": 8,
@@ -931,22 +931,22 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "228"
+          "pts": "268"
         },
         {
           "pos": 2,
+          "name": "&#160; Biniam Girmay &#160;",
+          "pts": "223"
+        },
+        {
+          "pos": 3,
           "name": "&#160; Tim Merlier &#160;",
           "pts": "213"
         },
         {
-          "pos": 3,
-          "name": "&#160; Biniam Girmay &#160;",
-          "pts": "203"
-        },
-        {
           "pos": 4,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "175"
+          "pts": "191"
         },
         {
           "pos": 5,
@@ -965,18 +965,18 @@
         },
         {
           "pos": 8,
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "87"
+        },
+        {
+          "pos": 9,
           "name": "&#160; Anthony Turgis &#160;",
           "pts": "79"
         },
         {
-          "pos": 9,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "75"
-        },
-        {
           "pos": 10,
-          "name": "&#160; Jonas Vingegaard &#160;",
-          "pts": "61"
+          "name": "&#160; Isaac del Toro &#160;",
+          "pts": "72"
         }
       ]
     }
