@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T02:24:59.660Z",
+  "updated": "2026-07-12T08:10:42.697Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -607,7 +607,7 @@
           "date": "2026-07-11",
           "name": "Southwick National",
           "venue": "The Wick 338, Southwick, MA",
-          "winner": ""
+          "winner": "Jett Lawrence"
         },
         {
           "r": 7,
@@ -648,12 +648,12 @@
       "standings": [
         {
           "pos": 1,
-          "name": "Hunter Lawrence",
+          "name": "Jett Lawrence",
           "pts": ""
         },
         {
           "pos": 2,
-          "name": "Jett Lawrence",
+          "name": "Hunter Lawrence",
           "pts": ""
         },
         {
@@ -668,12 +668,12 @@
         },
         {
           "pos": 5,
-          "name": "RJ Hampshire",
+          "name": "Garrett Marchbanks",
           "pts": ""
         },
         {
           "pos": 6,
-          "name": "Garrett Marchbanks",
+          "name": "RJ Hampshire",
           "pts": ""
         },
         {
@@ -693,17 +693,17 @@
         },
         {
           "pos": 10,
-          "name": "Aaron Plessinger",
-          "pts": ""
-        },
-        {
-          "pos": 11,
           "name": "Jordon Smith",
           "pts": ""
         },
         {
+          "pos": 11,
+          "name": "Aaron Plessinger",
+          "pts": ""
+        },
+        {
           "pos": 12,
-          "name": "Christian Craig",
+          "name": "Justin Barcia",
           "pts": ""
         }
       ]
