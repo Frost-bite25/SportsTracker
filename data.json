@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T13:27:14.270Z",
+  "updated": "2026-07-14T19:13:46.378Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,12 +931,12 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "268"
+          "pts": "293"
         },
         {
           "pos": 2,
           "name": "&#160; Biniam Girmay &#160;",
-          "pts": "223"
+          "pts": "239"
         },
         {
           "pos": 3,
@@ -946,12 +946,12 @@
         {
           "pos": 4,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "191"
+          "pts": "205"
         },
         {
           "pos": 5,
           "name": "&#160; Max Kanter &#160;",
-          "pts": "172"
+          "pts": "192"
         },
         {
           "pos": 6,
@@ -960,23 +960,23 @@
         },
         {
           "pos": 7,
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "107"
+        },
+        {
+          "pos": 8,
           "name": "&#160; Søren Wærenskjold &#160;",
           "pts": "89"
         },
         {
-          "pos": 8,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "87"
-        },
-        {
           "pos": 9,
-          "name": "&#160; Anthony Turgis &#160;",
-          "pts": "79"
+          "name": "&#160; Isaac del Toro &#160;",
+          "pts": "80"
         },
         {
           "pos": 10,
-          "name": "&#160; Isaac del Toro &#160;",
-          "pts": "72"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "79"
         }
       ]
     }
