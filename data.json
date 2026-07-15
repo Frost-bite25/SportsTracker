@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T13:30:48.861Z",
+  "updated": "2026-07-15T19:05:13.227Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,52 +931,52 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "293"
+          "pts": "317"
         },
         {
           "pos": 2,
           "name": "&#160; Biniam Girmay &#160;",
-          "pts": "239"
+          "pts": "272"
         },
         {
           "pos": 3,
-          "name": "&#160; Tim Merlier &#160;",
-          "pts": "213"
+          "name": "&#160; Jasper Philipsen &#160;",
+          "pts": "255"
         },
         {
           "pos": 4,
-          "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "205"
+          "name": "&#160; Tim Merlier &#160;",
+          "pts": "223"
         },
         {
           "pos": 5,
           "name": "&#160; Max Kanter &#160;",
-          "pts": "192"
+          "pts": "203"
         },
         {
           "pos": 6,
           "name": "&#160; Olav Kooij &#160;",
-          "pts": "110"
+          "pts": "160"
         },
         {
           "pos": 7,
+          "name": "&#160; Søren Wærenskjold &#160;",
+          "pts": "159"
+        },
+        {
+          "pos": 8,
           "name": "&#160; Tadej Pogačar &#160;",
           "pts": "107"
         },
         {
-          "pos": 8,
-          "name": "&#160; Søren Wærenskjold &#160;",
-          "pts": "89"
-        },
-        {
           "pos": 9,
-          "name": "&#160; Isaac del Toro &#160;",
-          "pts": "80"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "103"
         },
         {
           "pos": 10,
-          "name": "&#160; Anthony Turgis &#160;",
-          "pts": "79"
+          "name": "&#160; Huub Artz &#160;",
+          "pts": "89"
         }
       ]
     }
