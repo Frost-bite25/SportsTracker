@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T13:41:58.640Z",
+  "updated": "2026-07-16T19:04:01.844Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,32 +931,32 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "317"
+          "pts": "357"
         },
         {
           "pos": 2,
           "name": "&#160; Biniam Girmay &#160;",
-          "pts": "272"
+          "pts": "317"
         },
         {
           "pos": 3,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "255"
+          "pts": "311"
         },
         {
           "pos": 4,
           "name": "&#160; Tim Merlier &#160;",
-          "pts": "223"
+          "pts": "307"
         },
         {
           "pos": 5,
           "name": "&#160; Max Kanter &#160;",
-          "pts": "203"
+          "pts": "239"
         },
         {
           "pos": 6,
           "name": "&#160; Olav Kooij &#160;",
-          "pts": "160"
+          "pts": "210"
         },
         {
           "pos": 7,
@@ -965,18 +965,18 @@
         },
         {
           "pos": 8,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "107"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "129"
         },
         {
           "pos": 9,
-          "name": "&#160; Anthony Turgis &#160;",
-          "pts": "103"
+          "name": "&#160; Milan Fretin &#160;",
+          "pts": "117"
         },
         {
           "pos": 10,
-          "name": "&#160; Huub Artz &#160;",
-          "pts": "89"
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "107"
         }
       ]
     }
