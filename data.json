@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T13:19:51.216Z",
+  "updated": "2026-07-17T19:01:40.959Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,17 +931,17 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "357"
+          "pts": "377"
         },
         {
           "pos": 2,
-          "name": "&#160; Biniam Girmay &#160;",
-          "pts": "317"
+          "name": "&#160; Jasper Philipsen &#160;",
+          "pts": "336"
         },
         {
           "pos": 3,
-          "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "311"
+          "name": "&#160; Biniam Girmay &#160;",
+          "pts": "333"
         },
         {
           "pos": 4,
