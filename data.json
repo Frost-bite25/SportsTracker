@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T13:05:54.743Z",
+  "updated": "2026-07-18T18:58:07.501Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,17 +931,17 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "377"
+          "pts": "397"
         },
         {
           "pos": 2,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "336"
+          "pts": "361"
         },
         {
           "pos": 3,
           "name": "&#160; Biniam Girmay &#160;",
-          "pts": "333"
+          "pts": "347"
         },
         {
           "pos": 4,
@@ -951,7 +951,7 @@
         {
           "pos": 5,
           "name": "&#160; Max Kanter &#160;",
-          "pts": "239"
+          "pts": "255"
         },
         {
           "pos": 6,
@@ -970,13 +970,13 @@
         },
         {
           "pos": 9,
-          "name": "&#160; Milan Fretin &#160;",
-          "pts": "117"
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "127"
         },
         {
           "pos": 10,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "107"
+          "name": "&#160; Milan Fretin &#160;",
+          "pts": "117"
         }
       ]
     }
