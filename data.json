@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T13:09:09.021Z",
+  "updated": "2026-07-19T19:00:46.422Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -72,7 +72,7 @@
           "date": "2026-07-19",
           "name": "Belgian GP",
           "venue": "Spa-Francorchamps",
-          "winner": ""
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 11,
@@ -931,37 +931,37 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "397"
+          "pts": "417"
         },
         {
           "pos": 2,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "361"
+          "pts": "386"
         },
         {
           "pos": 3,
           "name": "&#160; Biniam Girmay &#160;",
-          "pts": "347"
+          "pts": "361"
         },
         {
           "pos": 4,
-          "name": "&#160; Tim Merlier &#160;",
-          "pts": "307"
+          "name": "&#160; Max Kanter &#160;",
+          "pts": "271"
         },
         {
           "pos": 5,
-          "name": "&#160; Max Kanter &#160;",
-          "pts": "255"
-        },
-        {
-          "pos": 6,
           "name": "&#160; Olav Kooij &#160;",
           "pts": "210"
         },
         {
-          "pos": 7,
+          "pos": 6,
           "name": "&#160; Søren Wærenskjold &#160;",
           "pts": "159"
+        },
+        {
+          "pos": 7,
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "144"
         },
         {
           "pos": 8,
@@ -970,13 +970,13 @@
         },
         {
           "pos": 9,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "127"
+          "name": "&#160; Milan Fretin &#160;",
+          "pts": "117"
         },
         {
           "pos": 10,
-          "name": "&#160; Milan Fretin &#160;",
-          "pts": "117"
+          "name": "&#160; Isaac del Toro &#160;",
+          "pts": "112"
         }
       ]
     }
