@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T19:39:37.694Z",
+  "updated": "2026-07-21T02:21:23.470Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -614,7 +614,7 @@
           "date": "2026-07-18",
           "name": "Spring Creek National",
           "venue": "Spring Creek MX, Millville, MN",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 8,
