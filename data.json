@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T13:39:46.559Z",
+  "updated": "2026-07-21T19:14:52.232Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -955,13 +955,13 @@
         },
         {
           "pos": 6,
-          "name": "&#160; Søren Wærenskjold &#160;",
-          "pts": "159"
+          "name": "&#160; Tadej Pogačar &#160;",
+          "pts": "161"
         },
         {
           "pos": 7,
-          "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "144"
+          "name": "&#160; Søren Wærenskjold &#160;",
+          "pts": "159"
         },
         {
           "pos": 8,
@@ -970,13 +970,13 @@
         },
         {
           "pos": 9,
-          "name": "&#160; Milan Fretin &#160;",
-          "pts": "117"
+          "name": "&#160; Isaac del Toro &#160;",
+          "pts": "123"
         },
         {
           "pos": 10,
-          "name": "&#160; Isaac del Toro &#160;",
-          "pts": "112"
+          "name": "&#160; Remco Evenepoel &#160;",
+          "pts": "121"
         }
       ]
     }
