@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23T13:48:38.633Z",
+  "updated": "2026-07-23T19:09:23.595Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -931,7 +931,7 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "452"
+          "pts": "477"
         },
         {
           "pos": 2,
@@ -956,7 +956,7 @@
         {
           "pos": 6,
           "name": "&#160; Tadej Pogačar &#160;",
-          "pts": "161"
+          "pts": "165"
         },
         {
           "pos": 7,
@@ -965,18 +965,18 @@
         },
         {
           "pos": 8,
-          "name": "&#160; Anthony Turgis &#160;",
-          "pts": "129"
+          "name": "&#160; Mauro Schmid &#160;",
+          "pts": "131"
         },
         {
           "pos": 9,
-          "name": "&#160; Isaac del Toro &#160;",
-          "pts": "123"
+          "name": "&#160; Remco Evenepoel &#160;",
+          "pts": "130"
         },
         {
           "pos": 10,
-          "name": "&#160; Remco Evenepoel &#160;",
-          "pts": "121"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "129"
         }
       ]
     }
