@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T13:12:02.741Z",
+  "updated": "2026-07-26T19:04:30.673Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -79,7 +79,7 @@
           "date": "2026-07-26",
           "name": "Hungarian GP",
           "venue": "Hungaroring, Mogyoród",
-          "winner": ""
+          "winner": "Lando Norris"
         },
         {
           "r": 12,
@@ -931,27 +931,27 @@
         {
           "pos": 1,
           "name": "&#160; Mads Pedersen &#160;",
-          "pts": "527"
+          "pts": "559"
         },
         {
           "pos": 2,
           "name": "&#160; Jasper Philipsen &#160;",
-          "pts": "445"
+          "pts": "475"
         },
         {
           "pos": 3,
           "name": "&#160; Biniam Girmay &#160;",
-          "pts": "361"
+          "pts": "367"
         },
         {
           "pos": 4,
           "name": "&#160; Max Kanter &#160;",
-          "pts": "271"
+          "pts": "289"
         },
         {
           "pos": 5,
           "name": "&#160; Olav Kooij &#160;",
-          "pts": "230"
+          "pts": "246"
         },
         {
           "pos": 6,
@@ -975,8 +975,8 @@
         },
         {
           "pos": 10,
-          "name": "&#160; Mauro Schmid &#160;",
-          "pts": "131"
+          "name": "&#160; Anthony Turgis &#160;",
+          "pts": "139"
         }
       ]
     }
