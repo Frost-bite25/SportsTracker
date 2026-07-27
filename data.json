@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T14:24:23.909Z",
+  "updated": "2026-07-27T19:21:20.935Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -649,57 +649,57 @@
         {
           "pos": 1,
           "name": "Hunter Lawrence",
-          "pts": "1"
+          "pts": "4"
         },
         {
           "pos": 2,
           "name": "Jett Lawrence",
-          "pts": "2"
+          "pts": "1"
         },
         {
           "pos": 3,
           "name": "Haiden Deegan",
-          "pts": "4"
+          "pts": "2"
         },
         {
           "pos": 4,
           "name": "Jorge Prado",
-          "pts": "13"
+          "pts": "3"
         },
         {
           "pos": 5,
           "name": "RJ Hampshire",
-          "pts": "3"
+          "pts": "10"
         },
         {
           "pos": 6,
-          "name": "Garrett Marchbanks",
-          "pts": "15"
+          "name": "Dylan Ferrandis",
+          "pts": "11"
         },
         {
           "pos": 7,
-          "name": "Dylan Ferrandis",
-          "pts": "7"
+          "name": "Garrett Marchbanks",
+          "pts": "5"
         },
         {
           "pos": 8,
           "name": "Cooper Webb",
-          "pts": "8"
+          "pts": "6"
         },
         {
           "pos": 9,
           "name": "Mikkel Haarup",
-          "pts": ""
+          "pts": "7"
         },
         {
           "pos": 10,
           "name": "Jordon Smith",
-          "pts": "14"
+          "pts": "8"
         },
         {
           "pos": 11,
           "name": "Justin Barcia",
-          "pts": "5"
+          "pts": "9"
         },
         {
           "pos": 12,
