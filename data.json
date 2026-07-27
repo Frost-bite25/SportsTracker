@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T09:42:53.095Z",
+  "updated": "2026-07-27T14:24:23.909Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -621,7 +621,7 @@
           "date": "2026-07-25",
           "name": "Washougal National",
           "venue": "Washougal MX Park, WA",
-          "winner": ""
+          "winner": "Hunter Lawrence"
         },
         {
           "r": 9,
