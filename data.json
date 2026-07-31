@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T02:27:27.560Z",
+  "updated": "2026-07-31T08:43:48.771Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -111,49 +111,49 @@
         },
         {
           "r": 16,
-          "date": "2026-10-11",
+          "date": "2026-10-04",
           "name": "Singapore GP",
           "venue": "Marina Bay Street Circuit (Sprint)",
           "winner": ""
         },
         {
           "r": 17,
-          "date": "2026-10-25",
+          "date": "2026-10-11",
           "name": "United States GP",
           "venue": "Circuit of the Americas, Austin",
           "winner": ""
         },
         {
           "r": 18,
-          "date": "2026-11-01",
+          "date": "2026-10-25",
           "name": "Mexico City GP",
           "venue": "Autódromo Hermanos Rodríguez",
           "winner": ""
         },
         {
           "r": 19,
-          "date": "2026-11-08",
+          "date": "2026-11-01",
           "name": "São Paulo GP",
           "venue": "Interlagos, São Paulo",
           "winner": ""
         },
         {
           "r": 20,
-          "date": "2026-11-22",
+          "date": "2026-11-08",
           "name": "Las Vegas GP",
           "venue": "Las Vegas Strip Circuit",
           "winner": ""
         },
         {
           "r": 21,
-          "date": "2026-11-29",
+          "date": "2026-11-22",
           "name": "Qatar GP",
           "venue": "Lusail International Circuit",
           "winner": ""
         },
         {
           "r": 22,
-          "date": "2026-12-06",
+          "date": "2026-11-29",
           "name": "Abu Dhabi GP",
           "venue": "Yas Marina Circuit",
           "winner": ""
