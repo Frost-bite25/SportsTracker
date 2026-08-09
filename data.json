@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T12:41:11.989Z",
+  "updated": "2026-08-09T18:33:44.830Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -244,7 +244,7 @@
           "date": "2026-07-12",
           "name": "German GP",
           "venue": "Sachsenring",
-          "winner": ""
+          "winner": "Raúl Fernández"
         },
         {
           "r": 13,
@@ -321,37 +321,37 @@
         {
           "pos": 1,
           "name": "Jorge Martín",
-          "pts": "220"
+          "pts": "240"
         },
         {
           "pos": 2,
+          "name": "Marco Bezzecchi",
+          "pts": "209"
+        },
+        {
+          "pos": 3,
           "name": "Ai Ogura",
           "pts": "203"
         },
         {
-          "pos": 3,
-          "name": "Marco Bezzecchi",
-          "pts": "195"
-        },
-        {
           "pos": 4,
           "name": "Marc Márquez",
-          "pts": "191"
+          "pts": "200"
         },
         {
           "pos": 5,
           "name": "Fabio Di Giannantonio",
-          "pts": "189"
+          "pts": "199"
         },
         {
           "pos": 6,
           "name": "Raúl Fernández",
-          "pts": "159"
+          "pts": "184"
         },
         {
           "pos": 7,
           "name": "Pedro Acosta",
-          "pts": "152"
+          "pts": "163"
         },
         {
           "pos": 8,
@@ -361,12 +361,12 @@
         {
           "pos": 9,
           "name": "Álex Márquez",
-          "pts": "93"
+          "pts": "106"
         },
         {
           "pos": 10,
           "name": "Luca Marini",
-          "pts": "79"
+          "pts": "86"
         },
         {
           "pos": 11,
