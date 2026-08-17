@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T06:45:05.117Z",
+  "updated": "2026-08-17T12:35:31.975Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -628,7 +628,7 @@
           "date": "2026-08-15",
           "name": "Unadilla National",
           "venue": "Unadilla MX, New Berlin, NY",
-          "winner": ""
+          "winner": "Jett Lawrence"
         },
         {
           "r": 10,
