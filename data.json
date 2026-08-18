@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T18:32:44.083Z",
+  "updated": "2026-08-18T00:59:24.548Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -648,13 +648,13 @@
       "standings": [
         {
           "pos": 1,
-          "name": "Hunter Lawrence",
-          "pts": "4"
+          "name": "Jett Lawrence",
+          "pts": "1"
         },
         {
           "pos": 2,
-          "name": "Jett Lawrence",
-          "pts": "1"
+          "name": "Hunter Lawrence",
+          "pts": "4"
         },
         {
           "pos": 3,
@@ -693,18 +693,18 @@
         },
         {
           "pos": 10,
-          "name": "Jordon Smith",
-          "pts": "8"
-        },
-        {
-          "pos": 11,
           "name": "Justin Barcia",
           "pts": "9"
         },
         {
+          "pos": 11,
+          "name": "Jordon Smith",
+          "pts": "8"
+        },
+        {
           "pos": 12,
-          "name": "Aaron Plessinger",
-          "pts": ""
+          "name": "Benny Bloss",
+          "pts": "19"
         }
       ]
     },
