@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T12:31:21.880Z",
+  "updated": "2026-08-23T18:22:17.567Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -86,7 +86,7 @@
           "date": "2026-08-23",
           "name": "Dutch GP",
           "venue": "Circuit Zandvoort (Sprint)",
-          "winner": ""
+          "winner": "Lando Norris"
         },
         {
           "r": 13,
