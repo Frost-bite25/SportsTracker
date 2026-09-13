@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T15:32:18.993Z",
+  "updated": "2026-09-13T20:14:11.746Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -100,7 +100,7 @@
           "date": "2026-09-13",
           "name": "Spanish GP",
           "venue": "Madring, Madrid (debut)",
-          "winner": ""
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 15,
@@ -320,63 +320,63 @@
       "standings": [
         {
           "pos": 1,
-          "name": "Jorge Martín",
-          "pts": "256"
+          "name": "Marc Márquez",
+          "pts": "274"
         },
         {
           "pos": 2,
-          "name": "Marc Márquez",
-          "pts": "237"
+          "name": "Jorge Martín",
+          "pts": "274"
         },
         {
           "pos": 3,
           "name": "Marco Bezzecchi",
-          "pts": "232"
+          "pts": "241"
         },
         {
           "pos": 4,
           "name": "Fabio Di Giannantonio",
-          "pts": "208"
+          "pts": "223"
         },
         {
           "pos": 5,
+          "name": "Pedro Acosta",
+          "pts": "209"
+        },
+        {
+          "pos": 6,
           "name": "Ai Ogura",
           "pts": "203"
         },
         {
-          "pos": 6,
-          "name": "Pedro Acosta",
-          "pts": "189"
-        },
-        {
           "pos": 7,
           "name": "Raúl Fernández",
-          "pts": "186"
+          "pts": "199"
         },
         {
           "pos": 8,
+          "name": "Álex Márquez",
+          "pts": "153"
+        },
+        {
+          "pos": 9,
           "name": "Francesco Bagnaia",
           "pts": "143"
         },
         {
-          "pos": 9,
-          "name": "Álex Márquez",
-          "pts": "128"
-        },
-        {
           "pos": 10,
           "name": "Fermín Aldeguer",
-          "pts": "90"
+          "pts": "105"
         },
         {
           "pos": 11,
           "name": "Luca Marini",
-          "pts": "88"
+          "pts": "96"
         },
         {
           "pos": 12,
           "name": "Enea Bastianini",
-          "pts": "84"
+          "pts": "92"
         }
       ]
     },
