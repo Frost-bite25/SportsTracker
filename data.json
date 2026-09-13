@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T11:01:06.612Z",
+  "updated": "2026-09-13T15:32:18.993Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -258,7 +258,7 @@
           "date": "2026-08-30",
           "name": "Aragon GP",
           "venue": "MotorLand Aragón",
-          "winner": ""
+          "winner": "Marc Márquez"
         },
         {
           "r": 15,
