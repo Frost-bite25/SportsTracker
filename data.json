@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T10:32:58.419Z",
+  "updated": "2026-09-20T15:21:00.233Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -265,7 +265,7 @@
           "date": "2026-09-13",
           "name": "San Marino GP",
           "venue": "Misano World Circuit",
-          "winner": ""
+          "winner": "Pedro Acosta"
         },
         {
           "r": 16,
@@ -320,63 +320,63 @@
       "standings": [
         {
           "pos": 1,
-          "name": "Marc Márquez",
-          "pts": "274"
+          "name": "Jorge Martín",
+          "pts": "306"
         },
         {
           "pos": 2,
-          "name": "Jorge Martín",
-          "pts": "274"
+          "name": "Marc Márquez",
+          "pts": "294"
         },
         {
           "pos": 3,
           "name": "Marco Bezzecchi",
-          "pts": "241"
+          "pts": "264"
         },
         {
           "pos": 4,
-          "name": "Fabio Di Giannantonio",
-          "pts": "223"
+          "name": "Pedro Acosta",
+          "pts": "234"
         },
         {
           "pos": 5,
-          "name": "Pedro Acosta",
-          "pts": "209"
+          "name": "Fabio Di Giannantonio",
+          "pts": "230"
         },
         {
           "pos": 6,
           "name": "Ai Ogura",
-          "pts": "203"
+          "pts": "222"
         },
         {
           "pos": 7,
           "name": "Raúl Fernández",
-          "pts": "199"
+          "pts": "203"
         },
         {
           "pos": 8,
           "name": "Álex Márquez",
-          "pts": "153"
+          "pts": "158"
         },
         {
           "pos": 9,
           "name": "Francesco Bagnaia",
-          "pts": "143"
+          "pts": "156"
         },
         {
           "pos": 10,
           "name": "Fermín Aldeguer",
-          "pts": "105"
+          "pts": "115"
         },
         {
           "pos": 11,
           "name": "Luca Marini",
-          "pts": "96"
+          "pts": "98"
         },
         {
           "pos": 12,
           "name": "Enea Bastianini",
-          "pts": "92"
+          "pts": "97"
         }
       ]
     },
