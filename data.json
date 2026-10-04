@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T11:43:31.441Z",
+  "updated": "2026-10-04T16:22:22.946Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -321,62 +321,62 @@
         {
           "pos": 1,
           "name": "Jorge Martín",
-          "pts": "306"
+          "pts": "333"
         },
         {
           "pos": 2,
           "name": "Marc Márquez",
-          "pts": "294"
+          "pts": "331"
         },
         {
           "pos": 3,
           "name": "Marco Bezzecchi",
-          "pts": "264"
+          "pts": "284"
         },
         {
           "pos": 4,
           "name": "Pedro Acosta",
-          "pts": "234"
+          "pts": "243"
         },
         {
           "pos": 5,
+          "name": "Ai Ogura",
+          "pts": "237"
+        },
+        {
+          "pos": 6,
           "name": "Fabio Di Giannantonio",
           "pts": "230"
         },
         {
-          "pos": 6,
-          "name": "Ai Ogura",
-          "pts": "222"
-        },
-        {
           "pos": 7,
           "name": "Raúl Fernández",
-          "pts": "203"
+          "pts": "216"
         },
         {
           "pos": 8,
+          "name": "Francesco Bagnaia",
+          "pts": "164"
+        },
+        {
+          "pos": 9,
           "name": "Álex Márquez",
           "pts": "158"
         },
         {
-          "pos": 9,
-          "name": "Francesco Bagnaia",
-          "pts": "156"
-        },
-        {
           "pos": 10,
           "name": "Fermín Aldeguer",
-          "pts": "115"
+          "pts": "122"
         },
         {
           "pos": 11,
-          "name": "Luca Marini",
-          "pts": "98"
+          "name": "Enea Bastianini",
+          "pts": "116"
         },
         {
           "pos": 12,
-          "name": "Enea Bastianini",
-          "pts": "97"
+          "name": "Luca Marini",
+          "pts": "104"
         }
       ]
     },
