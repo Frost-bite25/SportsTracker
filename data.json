@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T04:06:25.384Z",
+  "updated": "2026-10-04T11:43:31.441Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -272,7 +272,7 @@
           "date": "2026-09-20",
           "name": "Austrian GP",
           "venue": "Red Bull Ring, Spielberg",
-          "winner": ""
+          "winner": "Marc Márquez"
         },
         {
           "r": 17,
