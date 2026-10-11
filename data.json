@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T03:44:07.051Z",
+  "updated": "2026-10-11T12:01:49.314Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -279,7 +279,7 @@
           "date": "2026-10-04",
           "name": "Japanese GP",
           "venue": "Mobility Resort Motegi",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 18,
@@ -321,27 +321,27 @@
         {
           "pos": 1,
           "name": "Jorge Martín",
-          "pts": "333"
+          "pts": "355"
         },
         {
           "pos": 2,
           "name": "Marc Márquez",
-          "pts": "331"
+          "pts": "353"
         },
         {
           "pos": 3,
           "name": "Marco Bezzecchi",
-          "pts": "284"
+          "pts": "309"
         },
         {
           "pos": 4,
-          "name": "Pedro Acosta",
-          "pts": "243"
+          "name": "Ai Ogura",
+          "pts": "259"
         },
         {
           "pos": 5,
-          "name": "Ai Ogura",
-          "pts": "237"
+          "name": "Pedro Acosta",
+          "pts": "258"
         },
         {
           "pos": 6,
