@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T12:01:49.314Z",
+  "updated": "2026-10-11T21:25:24.338Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -121,7 +121,7 @@
           "date": "2026-10-11",
           "name": "United States GP",
           "venue": "Circuit of the Americas, Austin",
-          "winner": ""
+          "winner": "Max Verstappen"
         },
         {
           "r": 18,
@@ -346,37 +346,37 @@
         {
           "pos": 6,
           "name": "Fabio Di Giannantonio",
-          "pts": "230"
+          "pts": "245"
         },
         {
           "pos": 7,
           "name": "Raúl Fernández",
-          "pts": "216"
+          "pts": "236"
         },
         {
           "pos": 8,
-          "name": "Francesco Bagnaia",
-          "pts": "164"
+          "name": "Álex Márquez",
+          "pts": "172"
         },
         {
           "pos": 9,
-          "name": "Álex Márquez",
-          "pts": "158"
+          "name": "Francesco Bagnaia",
+          "pts": "166"
         },
         {
           "pos": 10,
           "name": "Fermín Aldeguer",
-          "pts": "122"
+          "pts": "125"
         },
         {
           "pos": 11,
           "name": "Enea Bastianini",
-          "pts": "116"
+          "pts": "122"
         },
         {
           "pos": 12,
           "name": "Luca Marini",
-          "pts": "104"
+          "pts": "108"
         }
       ]
     },
