@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T03:00:18.787Z",
+  "updated": "2026-10-25T10:37:27.063Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -286,7 +286,7 @@
           "date": "2026-10-11",
           "name": "Indonesian GP",
           "venue": "Mandalika Int'l Circuit",
-          "winner": ""
+          "winner": "Report"
         },
         {
           "r": 19,
@@ -335,13 +335,13 @@
         },
         {
           "pos": 4,
-          "name": "Ai Ogura",
-          "pts": "259"
+          "name": "Pedro Acosta",
+          "pts": "263"
         },
         {
           "pos": 5,
-          "name": "Pedro Acosta",
-          "pts": "263"
+          "name": "Ai Ogura",
+          "pts": "259"
         },
         {
           "pos": 6,
