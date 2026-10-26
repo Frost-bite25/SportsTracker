@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T20:19:48.291Z",
+  "updated": "2026-10-26T02:59:31.541Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -128,7 +128,7 @@
           "date": "2026-10-25",
           "name": "Mexico City GP",
           "venue": "Autódromo Hermanos Rodríguez",
-          "winner": ""
+          "winner": "Andrea Kimi Antonelli"
         },
         {
           "r": 19,
