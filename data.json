@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T21:38:06.518Z",
+  "updated": "2026-11-02T04:09:40.083Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -135,7 +135,7 @@
           "date": "2026-11-01",
           "name": "São Paulo GP",
           "venue": "Interlagos, São Paulo",
-          "winner": ""
+          "winner": "Max Verstappen"
         },
         {
           "r": 20,
