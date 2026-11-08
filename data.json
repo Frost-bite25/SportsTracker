@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T12:40:55.502Z",
+  "updated": "2026-11-08T21:38:09.518Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -142,7 +142,7 @@
           "date": "2026-11-08",
           "name": "Las Vegas GP",
           "venue": "Las Vegas Strip Circuit",
-          "winner": ""
+          "winner": "Lando Norris"
         },
         {
           "r": 21,
@@ -300,7 +300,7 @@
           "date": "2026-11-01",
           "name": "Malaysian GP",
           "venue": "Sepang Int'l Circuit",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 21,
@@ -321,37 +321,37 @@
         {
           "pos": 1,
           "name": "Marc Márquez",
-          "pts": "411"
+          "pts": "431"
         },
         {
           "pos": 2,
           "name": "Jorge Martín",
-          "pts": "362"
+          "pts": "371"
         },
         {
           "pos": 3,
           "name": "Marco Bezzecchi",
-          "pts": "332"
+          "pts": "357"
         },
         {
           "pos": 4,
           "name": "Pedro Acosta",
-          "pts": "299"
+          "pts": "309"
         },
         {
           "pos": 5,
           "name": "Ai Ogura",
-          "pts": "281"
+          "pts": "294"
         },
         {
           "pos": 6,
           "name": "Fabio Di Giannantonio",
-          "pts": "274"
+          "pts": "282"
         },
         {
           "pos": 7,
           "name": "Raúl Fernández",
-          "pts": "242"
+          "pts": "258"
         },
         {
           "pos": 8,
@@ -366,12 +366,12 @@
         {
           "pos": 10,
           "name": "Enea Bastianini",
-          "pts": "136"
+          "pts": "147"
         },
         {
           "pos": 11,
           "name": "Fermín Aldeguer",
-          "pts": "125"
+          "pts": "129"
         },
         {
           "pos": 12,
