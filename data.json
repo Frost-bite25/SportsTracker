@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T14:07:20.180Z",
+  "updated": "2026-11-21T22:43:41.415Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -326,37 +326,37 @@
         {
           "pos": 2,
           "name": "Jorge Martín",
-          "pts": "371"
+          "pts": "376"
         },
         {
           "pos": 3,
           "name": "Marco Bezzecchi",
-          "pts": "357"
+          "pts": "369"
         },
         {
           "pos": 4,
           "name": "Pedro Acosta",
-          "pts": "309"
+          "pts": "315"
         },
         {
           "pos": 5,
           "name": "Ai Ogura",
-          "pts": "294"
+          "pts": "298"
         },
         {
           "pos": 6,
           "name": "Fabio Di Giannantonio",
-          "pts": "282"
+          "pts": "285"
         },
         {
           "pos": 7,
           "name": "Raúl Fernández",
-          "pts": "258"
+          "pts": "267"
         },
         {
           "pos": 8,
           "name": "Álex Márquez",
-          "pts": "197"
+          "pts": "204"
         },
         {
           "pos": 9,
