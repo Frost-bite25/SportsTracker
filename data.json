@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T04:52:25.513Z",
+  "updated": "2026-11-22T13:58:23.509Z",
   "note": "Auto-updated. F1+MotoGP via GitHub Action; SX/MX/Hard Enduro/TdF via weekly Cowork task.",
   "series": {
     "f1": {
@@ -149,7 +149,7 @@
           "date": "2026-11-22",
           "name": "Qatar GP",
           "venue": "Lusail International Circuit",
-          "winner": ""
+          "winner": "Max Verstappen"
         },
         {
           "r": 22,
@@ -307,7 +307,7 @@
           "date": "2026-11-15",
           "name": "Portuguese GP",
           "venue": "Algarve Int'l Circuit, Portimão",
-          "winner": ""
+          "winner": "Marco Bezzecchi"
         },
         {
           "r": 22,
